@@ -4,8 +4,9 @@
 .header {
     @include flex-center;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     box-sizing: border-box;
+    border-bottom: 1px solid $grayish-blue;
 }
 nav {
     @include flex-center;
@@ -32,4 +33,8 @@ nav {
 a {
     text-decoration: none;
     color: $black-opacity-75;
+}
+.avatar {
+    width: 3.5rem;
+    height: 3.5rem;
 }
