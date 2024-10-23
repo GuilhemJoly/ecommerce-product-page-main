@@ -1,0 +1,35 @@
+@import '../Scss-variables/mixins.scss';
+@import '../Scss-variables/colors.scss';
+
+.header {
+    @include flex-center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+nav {
+    @include flex-center;
+    width: 60%;
+    box-sizing: border-box;
+
+    & ul {
+        @include flex-center;
+        gap: 2rem;
+
+        & li {
+            list-style: none;
+            cursor: pointer;
+        }
+    }
+}
+.cartAndAvatar {
+    @include flex-center;
+    justify-content: flex-end;
+    width: 40%;
+    gap: 3rem;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: $black-opacity-75;
+}
