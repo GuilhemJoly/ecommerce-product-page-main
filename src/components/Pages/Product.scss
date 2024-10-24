@@ -3,4 +3,5 @@
 .productPage {
     @include flex-center;
     width: 100%;
+    height: fit-content;
 }

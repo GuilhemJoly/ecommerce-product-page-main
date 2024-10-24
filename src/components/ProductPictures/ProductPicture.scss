@@ -1,0 +1,29 @@
+@import "../../Scss-variables/mixins.scss";
+
+.productPictures {
+    @include flex-center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 50%;
+    gap: 2rem;
+}
+.productBigPicture {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.productSmallPictures {
+    @include flex-center;
+    width: 95%;
+    height: 20%;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    & img {
+        width: 5.5rem;
+        height: 5.5rem;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+}
