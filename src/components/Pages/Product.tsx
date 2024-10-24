@@ -5,13 +5,13 @@ const Product = () => {
 
     return (
         <div>
-            <h2>{brand}</h2>
-            <h1>{name}</h1>
-            <p>{description}</p>
-            <div>
-                <span>{price}</span>
-                <span>{discount}</span>
-                <span>{previousPrice}</span>
+            <h2 className="productBrand">{brand}</h2>
+            <h1 className="prductName">{name}</h1>
+            <p className="productDescription">{description}</p>
+            <div className="productPriceElements">
+                <span className="productPrice">{price}</span>
+                <span className="productDiscount">{discount}</span>
+                <span className="productPreviousPrice">{previousPrice}</span>
             </div>
         </div>
     );
