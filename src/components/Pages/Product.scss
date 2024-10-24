@@ -1,0 +1,6 @@
+@import "../../Scss-variables/mixins.scss";
+
+.productPage {
+    @include flex-center;
+    width: 100%;
+}

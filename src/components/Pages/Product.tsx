@@ -1,10 +1,11 @@
 import { ProductPictures } from "../ProductPictures/ProductPictures";
 import { ProductDescription } from "../ProductDecription/ProductDescription";
+import './Product.scss';
 
 const Product = () => {
 
     return (
-        <div>
+        <div className="productPage">
             <ProductPictures/>
             <ProductDescription/>
         </div>
