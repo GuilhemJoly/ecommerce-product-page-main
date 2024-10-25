@@ -8,7 +8,7 @@ export const ProductDescription = () => {
   return (
     <div className="productDescription">
       <h2 className="productBrand">{brand}</h2>
-      <h1 className="prductName">{name}</h1>
+      <h1 className="productName">{name}</h1>
       <p className="productParagraphDescription">{description}</p>
       <div className="productPriceElements">
         <div className="productPriceAndDiscount">
