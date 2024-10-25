@@ -9,6 +9,11 @@
     box-sizing: border-box;
     border-bottom: 1px solid $grayish-blue;
 }
+.logo {
+    width: 8.7rem;
+    height: 3rem;
+    object-fit: contain;
+}
 nav {
     display: flex;
     width: 60%;
