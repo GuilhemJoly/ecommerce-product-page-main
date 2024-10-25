@@ -28,5 +28,48 @@
 .productParagraphDescription {
     color: $dark-grayish-blue;
     width: 100%;
+    margin: 0 0 1.4rem 0;
+}
+.productPriceAndDiscount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: aqua;
+    width: 10.7rem;
+    margin-bottom: 0.6rem;
+}
+.productPrice {
+    font-size: 1.85rem;
+    font-weight: $font-weight-bold;
+    color: $very-dark-blue;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 2.5rem;
+}
+.productDiscount {
+    @include flex-center;
+    background-color: $very-dark-blue;
+    color: $white;
+    height: 0.85rem;
+    width: 2.1rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.productPreviousPrice {
+    font-size: 1rem;
+    color: $dark-grayish-blue;
+    font-weight: $font-weight-bold;
+    position: relative;
     margin: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 55%; 
+        height: 1px;
+        background-color: $dark-grayish-blue;
+    }
 }
