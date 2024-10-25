@@ -31,8 +31,12 @@
         border: 3px solid transparent; 
         cursor: pointer;
 
-        &.selected {
-            border-color: $orange; 
+        &:hover {
+            opacity: 0.5;
+        }
+        &.selected{
+            border-color: $orange;
+            opacity: 0.5;
         }
     }
 }
