@@ -16,21 +16,6 @@
     object-fit: contain;
     margin-right: 1rem;
 }
-nav {
-    display: flex;
-    width: 60%;
-    box-sizing: border-box;
-
-    & ul {
-        @include flex-center;
-        gap: 2rem;
-
-        & li {
-            list-style: none;
-            cursor: pointer;
-        }
-    }
-}
 .cartAndAvatar {
     @include flex-center;
     justify-content: flex-end;
