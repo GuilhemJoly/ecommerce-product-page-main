@@ -1,0 +1,135 @@
+@import "../../Scss-variables/mixins";
+@import "../../Scss-variables/typography.scss";
+@import "../../Scss-variables/colors.scss";
+
+.productDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 27.7rem;
+    height: 38rem;
+    padding: 0;
+}
+.productBrand {
+    font-size: 0.85rem;
+    font-weight: $font-weight-bold;
+    color: $dark-grayish-blue;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin: 0;
+}
+.productName {
+    font-size: 2.75rem;
+    width: 90%; 
+    margin: 1.3rem 0 2.5rem 0;
+    line-height: 3rem;
+}
+.productParagraphDescription {
+    color: $dark-grayish-blue;
+    width: 100%;
+    margin: 0 0 1.4rem 0;
+}
+.productPriceAndDiscount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10.7rem;
+    margin-bottom: 0.6rem;
+}
+.productPrice {
+    font-size: 1.85rem;
+    font-weight: $font-weight-bold;
+    color: $very-dark-blue;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 2.5rem;
+}
+.productDiscount {
+    @include flex-center;
+    background-color: $very-dark-blue;
+    color: $white;
+    height: 0.85rem;
+    width: 2.1rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.productPreviousPrice {
+    font-size: 1rem;
+    color: $dark-grayish-blue;
+    font-weight: $font-weight-bold;
+    position: relative;
+    margin: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 55%; 
+        height: 1px;
+        background-color: $dark-grayish-blue;
+    }
+}
+.addToCartSection {
+    @include flex-center;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: 5rem;
+    margin: 1.6rem 0 1.5rem 0;
+}
+.productQuantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    height: 3.4rem;
+    background-color: $light-grayish-blue;
+    border-radius: 0.6rem;
+    
+    & .quantityButton {
+        @include flex-center;
+        background-color: $light-grayish-blue;
+        color: $orange;
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        margin:0 0.1rem 0.2rem 0;
+    }
+    & .streched {
+        transform: scaleX(1.7);
+        width: 1.5rem;
+        margin: auto 0 0.7rem 0.6rem ;
+    }
+
+    & .quantityNumber {
+        font-size: 1rem;
+        font-weight: $font-weight-bold;
+        color: $very-dark-blue;
+    }
+}
+.productAddToCart {
+    @include flex-center;
+    background-color: $orange;
+    box-sizing: border-box;
+    border: none;
+    color: $very-dark-blue;
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    width: 17.5rem;
+    height: 3.5rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+
+    & .buttonCartImg {
+        @include flex-center;
+        margin-top: 0.1rem;
+        margin-right: 0.85rem;
+        width: 1.2rem;
+        fill: $very-dark-blue;
+    }
+}
