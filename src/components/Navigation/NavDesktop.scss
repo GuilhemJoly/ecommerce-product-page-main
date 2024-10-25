@@ -1,0 +1,17 @@
+@import '../../Scss-variables/mixins';
+
+nav {
+    display: flex;
+    width: 60%;
+    box-sizing: border-box;
+
+    & ul {
+        @include flex-center;
+        gap: 2rem;
+
+        & li {
+            list-style: none;
+            cursor: pointer;
+        }
+    }
+}

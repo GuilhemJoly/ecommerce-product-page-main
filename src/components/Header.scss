@@ -5,35 +5,27 @@
 .header {
     @include flex-center;
     justify-content: space-between;
-    width: 90%;
+    width: 87%;
     box-sizing: border-box;
     border-bottom: 1px solid $grayish-blue;
+    padding-bottom: 1.8rem;
 }
-nav {
-    display: flex;
-    width: 60%;
-    box-sizing: border-box;
-
-    & ul {
-        @include flex-center;
-        gap: 2rem;
-
-        & li {
-            list-style: none;
-            cursor: pointer;
-        }
-    }
+.logo {
+    width: 8.7rem;
+    height: 3rem;
+    object-fit: contain;
+    margin-right: 1rem;
 }
 .cartAndAvatar {
     @include flex-center;
     justify-content: flex-end;
     width: 40%;
-    gap: 3rem;
+    gap: 2.9rem;
     box-sizing: border-box;
 }
 .avatar {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.1rem;
+    height: 3.1rem;
 }
 a {
     text-decoration: none;
