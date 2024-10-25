@@ -73,16 +73,22 @@
         background-color: $dark-grayish-blue;
     }
 }
+.addToCartSection {
+    @include flex-center;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: 5rem;
+    margin: 2.2rem 0 1.5rem 0;
+}
 .productQuantity {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 10rem;
     height: 3.4rem;
-    margin-bottom: 1.5rem;
     background-color: $light-grayish-blue;
     border-radius: 0.6rem;
-    margin-top: 2.2rem;
     
     & .quantityButton {
         @include flex-center;
@@ -105,5 +111,26 @@
         font-size: 1rem;
         font-weight: $font-weight-bold;
         color: $very-dark-blue;
+    }
+}
+.productAddToCart {
+    @include flex-center;
+    background-color: $orange;
+    box-sizing: border-box;
+    border: none;
+    color: $very-dark-blue;
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    width: 17.5rem;
+    height: 3.5rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+
+    & .buttonCartImg {
+        @include flex-center;
+        margin-top: 0.1rem;
+        margin-right: 0.85rem;
+        width: 1.2rem;
+        fill: $very-dark-blue;
     }
 }
