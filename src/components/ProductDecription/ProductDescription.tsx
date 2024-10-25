@@ -19,6 +19,14 @@ export const ProductDescription = () => {
           {"$" + previousPrice.toFixed(2)}
         </span>
       </div>
+      <div>
+        <div className="productQuantity">
+            <button className="quantityButton streched">-</button>
+            <span className="quantityNumber">0</span>
+            <button className="quantityButton">+</button>
+        </div>
+        <button className="productAddToCart">Add to cart</button>
+      </div>
     </div>
   );
 };

@@ -73,3 +73,37 @@
         background-color: $dark-grayish-blue;
     }
 }
+.productQuantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    height: 3.4rem;
+    margin-bottom: 1.5rem;
+    background-color: $light-grayish-blue;
+    border-radius: 0.6rem;
+    margin-top: 2.2rem;
+    
+    & .quantityButton {
+        @include flex-center;
+        background-color: $light-grayish-blue;
+        color: $orange;
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        margin:0 0.1rem 0.2rem 0;
+    }
+    & .streched {
+        transform: scaleX(1.7);
+        width: 1.5rem;
+        margin: auto 0 0.7rem 0.6rem ;
+    }
+
+    & .quantityNumber {
+        font-size: 1rem;
+        font-weight: $font-weight-bold;
+        color: $very-dark-blue;
+    }
+}
