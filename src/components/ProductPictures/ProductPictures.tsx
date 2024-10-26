@@ -35,8 +35,10 @@ export const ProductPictures = () => {
       />
       {isLightboxOpen && (
         <Lightbox
-          images={imgBig}
-          initialIndex={selectedIndex}
+          imgSmall={imgSmall}
+          image={selectedImage}
+          imgBig={imgBig}
+          selectedIndex={selectedIndex}
           onClose={handleCloseLightbox}
         />
       )}

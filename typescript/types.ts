@@ -1,12 +1,14 @@
 export interface LightboxProps {
-  images: string[];
-  initialIndex: number;
+  imgSmall: string[];
+  image: string;
+  imgBig: string[];
+  selectedIndex: number;
   onClose: () => void;
 }
 
 export interface BigPictureProps {
   image: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export interface SmallPicturesProps {
