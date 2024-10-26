@@ -2,7 +2,7 @@ import { useState } from "react";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 
 import "./ProductPicture.scss";
-import Lightbox from "../Lightbox/Lightbox";
+import Lightbox from "./Lightbox/Lightbox";
 
 export const ProductPictures = () => {
   

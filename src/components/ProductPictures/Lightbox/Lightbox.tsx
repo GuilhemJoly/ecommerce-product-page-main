@@ -1,12 +1,8 @@
-interface LightboxProps {
-  images: string[];
-  initialIndex: number;
-  onClose: () => void;
-}
+import { LightboxProps } from "../../../../typescript/types";
 
 const Lightbox: React.FC<LightboxProps> = () => {
   return (
-    <div>
+    <div className="lightbox">
       <h1>Lightbox</h1>
     </div>
   );
