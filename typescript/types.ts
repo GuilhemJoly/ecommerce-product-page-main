@@ -3,3 +3,8 @@ export interface LightboxProps {
   initialIndex: number;
   onClose: () => void;
 }
+
+export interface BigPictureProps {
+  image: string;
+  onClick: () => void;
+}

@@ -3,6 +3,7 @@ import { sneakersDatas } from "../../datas/sneakersDatas";
 
 import "./ProductPicture.scss";
 import Lightbox from "./Lightbox/Lightbox";
+import BigPicture from "./BigPicture/BigPicture";
 
 export const ProductPictures = () => {
   
@@ -24,12 +25,7 @@ export const ProductPictures = () => {
 
   return (
     <div className="productPictures">
-      <img
-        className="productBigPicture"
-        src={selectedImage}
-        alt="product big view"
-        onClick={handleImageClick}
-      />
+      <BigPicture image={selectedImage} onClick={handleImageClick}/>
       <div className="productSmallPictures">
         {imgSmall.map((smallImg, index) => (
           <div
