@@ -1,4 +1,5 @@
 import { LightboxProps } from "../../../../typescript/types";
+import './Lightbox.scss';
 
 const Lightbox: React.FC<LightboxProps> = () => {
   return (
