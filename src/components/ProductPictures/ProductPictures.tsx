@@ -2,22 +2,33 @@ import { useState } from "react";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 
 import "./ProductPicture.scss";
+import Lightbox from "../Lightbox/Lightbox";
 
 export const ProductPictures = () => {
+  
   const { imgBig, imgSmall } = sneakersDatas[0];
   const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const handleThumbnailClick = (imgBig: string, index: number) => {
     setSelectedImage(imgBig);
     setSelectedIndex(index);
   };
+  const handleImageClick = () => {
+    setIsLightboxOpen(true);
+  };
+  const handleCloseLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
   return (
     <div className="productPictures">
       <img
         className="productBigPicture"
         src={selectedImage}
         alt="product big view"
+        onClick={handleImageClick}
       />
       <div className="productSmallPictures">
         {imgSmall.map((smallImg, index) => (
@@ -35,6 +46,13 @@ export const ProductPictures = () => {
           </div>
         ))}
       </div>
+      {isLightboxOpen && (
+        <Lightbox
+          images={imgBig}
+          initialIndex={selectedIndex}
+          onClose={handleCloseLightbox}
+        />
+      )}
     </div>
   );
 };
