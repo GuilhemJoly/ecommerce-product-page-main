@@ -4,6 +4,7 @@ import { sneakersDatas } from "../../datas/sneakersDatas";
 import "./ProductPicture.scss";
 import Lightbox from "./Lightbox/Lightbox";
 import BigPicture from "./BigPicture/BigPicture";
+import SmallPictures from "./SmallPictures/SmallPictures";
 
 export const ProductPictures = () => {
   
@@ -26,22 +27,12 @@ export const ProductPictures = () => {
   return (
     <div className="productPictures">
       <BigPicture image={selectedImage} onClick={handleImageClick}/>
-      <div className="productSmallPictures">
-        {imgSmall.map((smallImg, index) => (
-          <div
-            key={index}
-            className="thumbnail-container"
-            onClick={() => handleThumbnailClick(imgBig[index], index)}
-          >
-            {selectedIndex === index && <span className="borderImg"></span>}
-            <img
-              className={selectedIndex === index ? "selected" : ""}
-              src={smallImg}
-              alt={`product view ${index + 1}`}
-            />
-          </div>
-        ))}
-      </div>
+      <SmallPictures
+        imgSmall={imgSmall}
+        imgBig={imgBig}
+        selectedIndex={selectedIndex}
+        onThumbnailClick={handleThumbnailClick}
+      />
       {isLightboxOpen && (
         <Lightbox
           images={imgBig}
