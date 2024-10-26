@@ -22,6 +22,7 @@
     height: 20%;
     box-sizing: border-box;
     justify-content: space-between;
+    margin: 0;
 
     & img {
         position: relative;
@@ -29,7 +30,7 @@
         height: 5.5rem;
         object-fit: cover;
         border-radius: 15px;
-        border: 3px solid transparent; 
+        border: 2px solid transparent; 
         cursor: pointer;
         z-index: 1;
 
@@ -46,7 +47,7 @@
         height: 5.5rem;
         object-fit: cover;
         border-radius: 15px;
-        border: 3px solid $orange;
+        border: 2px solid $orange;
         display: block;
         z-index: 0;
 
