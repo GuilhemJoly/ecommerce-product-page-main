@@ -1,6 +1,9 @@
 @import '../../../Scss-variables/colors';
+@import '../../../Scss-variables/mixins';
 
 .lightbox {
+    @include flex-center;
+    flex-direction: column;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -10,7 +13,14 @@
     overflow: auto;
     background-color: $black-opacity-75;
 }
+.BigPicturesLightBoxContainer {
+    width: 34%;
+    height: fit-content;
+    z-index: 2;
+    margin: 0 0 2rem 0;
+}
 .SmallPicturesLightBoxContainer {
+    @include flex-center;
     width: 30%;
     z-index: 2;
 }

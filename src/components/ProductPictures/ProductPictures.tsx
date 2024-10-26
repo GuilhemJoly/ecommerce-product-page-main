@@ -39,6 +39,7 @@ export const ProductPictures = () => {
           image={selectedImage}
           imgBig={imgBig}
           selectedIndex={selectedIndex}
+          onThumbnailClick={handleThumbnailClick}
           onClose={handleCloseLightbox}
         />
       )}

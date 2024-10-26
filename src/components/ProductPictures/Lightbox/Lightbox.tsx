@@ -8,18 +8,21 @@ const Lightbox: React.FC<LightboxProps> = ({
   image,
   imgSmall,
   selectedIndex,
+  onThumbnailClick,
   onClose,
 }) => {
   return (
     <div className="lightbox">
       <h1>Lightbox</h1>
-      <BigPicture image={image} />
+      <div className="BigPicturesLightBoxContainer">
+        <BigPicture image={image} />
+      </div>
       <div className="SmallPicturesLightBoxContainer">
         <SmallPictures
           imgSmall={imgSmall}
           imgBig={imgBig}
           selectedIndex={selectedIndex}
-          onThumbnailClick={() => {}}
+          onThumbnailClick={onThumbnailClick}
         />
       </div>
     </div>

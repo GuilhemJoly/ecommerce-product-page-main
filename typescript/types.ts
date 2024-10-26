@@ -3,6 +3,7 @@ export interface LightboxProps {
   image: string;
   imgBig: string[];
   selectedIndex: number;
+  onThumbnailClick: (imgBig: string, index: number) => void;
   onClose: () => void;
 }
 
