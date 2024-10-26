@@ -8,16 +8,6 @@ export const sneakersDatas = [
         price: 125,
         discount: 50,
         previousPrice: 250,
-        images: [
-            "public/images/fall-limited-edition-sneakers/image-product-1.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-1-thumbnail.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-2.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-2-thumbnail.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-3.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-3-thumbnail.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-4.jpg",
-            "public/images/fall-limited-edition-sneakers/image-product-4-thumbnail.jpg"
-        ],
         imgSmall: [
             "public/images/fall-limited-edition-sneakers/image-product-1-thumbnail.jpg",
             "public/images/fall-limited-edition-sneakers/image-product-2-thumbnail.jpg",
