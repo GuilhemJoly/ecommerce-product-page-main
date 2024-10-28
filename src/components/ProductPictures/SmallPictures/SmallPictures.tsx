@@ -15,7 +15,7 @@ const SmallPictures: React.FC<SmallPicturesProps> = ({
           className="thumbnail-container"
           onClick={() => onThumbnailClick(imgBig[index], index)}
         >
-          {selectedIndex === index && <span className="borderImg"></span>}
+          <span className={`borderImg ${selectedIndex === index ? "selected" : ""}`} ></span>
           <img
             className={selectedIndex === index ? "selected" : ""}
             src={smallImg}
