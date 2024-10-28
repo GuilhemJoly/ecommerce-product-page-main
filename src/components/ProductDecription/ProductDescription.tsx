@@ -1,5 +1,5 @@
-import { json } from "react-router-dom";
 import { useQuantity } from "../../customHooks/useQuantity";
+import { useCart } from "../../customHooks/useLocalStorage";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 import Button from "../ui/Button";
 
@@ -10,9 +10,16 @@ export const ProductDescription = () => {
     sneakersDatas[0];
 
   const { quantity, incrementQuantity, decrementQuantity } = useQuantity();
-  const handleSubmitToCart = () => {
-    const elementToCart = JSON.stringify({brand, name, price, quantity});
-    localStorage.setItem("cart", elementToCart);
+  const { handleSubmitToStorage } = useCart();
+  
+  const a = {brand};
+  const b = {name};
+  const c = {price};
+  const d = {quantity};
+
+  const handleSubmit = () => {
+    const elements =  JSON.stringify({ a, b, c, d });
+    handleSubmitToStorage({ elements });
   };
 
   return (
@@ -42,7 +49,11 @@ export const ProductDescription = () => {
             +
           </button>
         </div>
-        <Button buttonName="addToCart" buttonClass="productAddToCart" onClick={handleSubmitToCart}/>
+        <Button
+          buttonName="addToCart"
+          buttonClass="productAddToCart"
+          onClick={handleSubmit}
+        />
       </div>
     </div>
   );
