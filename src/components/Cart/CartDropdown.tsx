@@ -9,6 +9,8 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
     const name = cartItem?.b?.name || "Error";
     const price = cartItem?.c?.price || 0;
     const quantity = cartItem?.d?.quantity || 0;
+
+    const finalPrice = price * quantity;
     
   return (
     <div className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
@@ -30,7 +32,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
                 <span>${price.toFixed(2)}</span>
                 <span>x </span>
                 <span>{quantity}</span>
-                <span className="bold">$375.00</span>
+                <span className="bold">${finalPrice.toFixed(2)}</span>
               </div>
             </div>
             <div className="deleteIconContainer">
