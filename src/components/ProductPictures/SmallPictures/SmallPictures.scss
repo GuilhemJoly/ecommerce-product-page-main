@@ -1,0 +1,46 @@
+@import "../../../Scss-variables/mixins.scss";
+@import "../../../Scss-variables/colors.scss";
+
+.productSmallPictures {
+    @include flex-center;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin: 0;
+
+    & img {
+        position: relative;
+        width: 5.5rem;
+        height: 5.5rem;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 2px solid transparent; 
+        cursor: pointer;
+        z-index: 1;
+  
+        &.selected{
+            border: 2px solid $orange;
+        }      
+    }
+    & .borderImg {
+        position: absolute;
+        width: 5.5rem;
+        height: 5.5rem;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 2px solid $orange;
+        background-color: $white;
+        opacity: 0;
+        display: block;
+        z-index: 2;
+
+        &:hover {
+            opacity: 0.5;
+        }
+        &.selected{
+            opacity: 0.7;
+        }  
+
+    }
+}

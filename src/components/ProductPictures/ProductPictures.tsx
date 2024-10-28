@@ -2,39 +2,47 @@ import { useState } from "react";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 
 import "./ProductPicture.scss";
+import Lightbox from "./Lightbox/Lightbox";
+import BigPicture from "./BigPicture/BigPicture";
+import SmallPictures from "./SmallPictures/SmallPictures";
 
 export const ProductPictures = () => {
+  
   const { imgBig, imgSmall } = sneakersDatas[0];
   const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const handleThumbnailClick = (imgBig: string, index: number) => {
     setSelectedImage(imgBig);
     setSelectedIndex(index);
   };
+  const handleImageClick = () => {
+    setIsLightboxOpen(true);
+  };
+  const handleCloseLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
   return (
     <div className="productPictures">
-      <img
-        className="productBigPicture"
-        src={selectedImage}
-        alt="product big view"
+      <BigPicture image={selectedImage} onClick={handleImageClick}/>
+      <SmallPictures
+        imgSmall={imgSmall}
+        imgBig={imgBig}
+        selectedIndex={selectedIndex}
+        onThumbnailClick={handleThumbnailClick}
       />
-      <div className="productSmallPictures">
-        {imgSmall.map((smallImg, index) => (
-          <div
-            key={index}
-            className="thumbnail-container"
-            onClick={() => handleThumbnailClick(imgBig[index], index)}
-          >
-            {selectedIndex === index && <span className="borderImg"></span>}
-            <img
-              className={selectedIndex === index ? "selected" : ""}
-              src={smallImg}
-              alt={`product view ${index + 1}`}
-            />
-          </div>
-        ))}
-      </div>
+      {isLightboxOpen && (
+        <Lightbox
+          imgSmall={imgSmall}
+          image={selectedImage}
+          imgBig={imgBig}
+          selectedIndex={selectedIndex}
+          onThumbnailClick={handleThumbnailClick}
+          onClose={handleCloseLightbox}
+        />
+      )}
     </div>
   );
 };

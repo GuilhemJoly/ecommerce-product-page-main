@@ -1,0 +1,45 @@
+@import '../../../Scss-variables/colors';
+@import '../../../Scss-variables/mixins';
+
+.lightbox {
+    @include flex-center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: $black-opacity-75;
+}
+.lbElementContainer {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.BigPicturesLightBoxContainer {
+    width: 38.2%;
+    height: fit-content;
+    z-index: 2;
+    margin: 0 0 2rem 0;
+    position: relative;
+}
+.SmallPicturesLightBoxContainer {
+    @include flex-center;
+    width: 31%;
+    z-index: 2;
+}
+.containerLbCloseIcon {
+    width: 40.3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+}
+.lbCloseIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $orange;
+    cursor: pointer;
+}
