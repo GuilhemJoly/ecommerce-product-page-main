@@ -1,12 +1,19 @@
 import { CartDropdownProps } from "../../../typescript/types";
+import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import Button from "../ui/Button";
 import "./CartDropDown.scss";
 
-const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, isEmpty }) => {
+const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
+    const {handleGetElementFromStorage} = useLocalStorage();
+    const cartItem = handleGetElementFromStorage();
+    const name = cartItem?.b?.name || "Error";
+    const price = cartItem?.c?.price || 0;
+    const quantity = cartItem?.d?.quantity || 0;
+    
   return (
     <div className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
-      {isEmpty ? (
+      {!cartItem ? (
         <div className="isEmptyDiv">
             <span className="isEmptySpan">Your cart is empty</span>
         </div>
@@ -18,11 +25,11 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, isEmpty }) => {
               src="public/images/fall-limited-edition-sneakers/image-product-1-thumbnail.jpg"
             />
             <div className="cartItemDescription">
-              <span>Fall Limited Edition Sneakers</span>
+              <span>{name}</span>
               <div className="cartPriceSection">
-                <span>$125.00</span>
+                <span>${price.toFixed(2)}</span>
                 <span>x </span>
-                <span>3</span>
+                <span>{quantity}</span>
                 <span className="bold">$375.00</span>
               </div>
             </div>
