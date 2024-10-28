@@ -27,4 +27,9 @@ export interface ArrowButtonProps {
 export interface ButtonProps {
   buttonName: string;
   buttonClass: string;
-};
+}
+
+export interface CartDropdownProps {
+  isOpen: boolean;
+  isEmpty: boolean;
+}
