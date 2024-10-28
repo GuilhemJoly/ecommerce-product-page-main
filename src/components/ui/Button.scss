@@ -1,0 +1,15 @@
+@import "../../Scss-variables/mixins";
+@import "../../Scss-variables/typography.scss";
+@import "../../Scss-variables/colors.scss";
+
+.button {
+    @include flex-center;
+    background-color: $orange;
+    box-sizing: border-box;
+    border: none;
+    color: $very-dark-blue;
+    font-size: 1rem;
+    font-weight: $font-weight-bold;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}

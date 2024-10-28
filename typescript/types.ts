@@ -23,3 +23,8 @@ export interface ArrowButtonProps {
   isLeftButton: boolean;
   imgChange: () => void;
 }
+
+export interface ButtonProps {
+  buttonName: string;
+  buttonClass: string;
+};
