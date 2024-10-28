@@ -31,4 +31,5 @@ export interface ButtonProps {
 
 export interface CartDropdownProps {
   isOpen: boolean;
+  isEmpty: boolean;
 }

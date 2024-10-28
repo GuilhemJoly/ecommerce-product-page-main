@@ -26,13 +26,25 @@
   & h4 {
     margin-top: 0.8rem;
     padding-left: 1rem;
+    padding-bottom: 0.4rem;
   }
+}
+.isEmptyDiv {
+  @include flex-center;
+  border-top: 1px solid $grayish-blue;
+  width: 100%;
+  min-height: 11rem;
+}
+.isEmptySpan {
+  @include flex-center;
+  color: $dark-grayish-blue;
 }
 .cartItems {
   @include flex-center;
   flex-direction: column;
   border-top: 1px solid $grayish-blue;
   width: 100%;
+  min-height: 12rem;
   margin: 0;
   gap: 1.6rem;
   color: $dark-grayish-blue;
