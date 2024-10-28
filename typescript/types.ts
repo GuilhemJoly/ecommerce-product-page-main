@@ -26,5 +26,5 @@ export interface ArrowButtonProps {
 
 export interface ButtonProps {
   buttonName: string;
-  buttonSize: string;
+  buttonClass: string;
 };
