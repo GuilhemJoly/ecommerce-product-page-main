@@ -1,5 +1,5 @@
 import { useQuantity } from "../../customHooks/useQuantity";
-import { useCart } from "../../customHooks/useLocalStorage";
+import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 import Button from "../ui/Button";
 
@@ -9,9 +9,9 @@ export const ProductDescription = () => {
   const { brand, name, description, price, discount, previousPrice } =
     sneakersDatas[0];
 
-  const { quantity, incrementQuantity, decrementQuantity } = useQuantity();
-  const { handleSubmitToStorage } = useCart();
-  
+  const { quantity, incrementQuantity, decrementQuantity, resetQuantity } = useQuantity();
+  const { handleSubmitToStorage } = useLocalStorage();
+
   const a = {brand};
   const b = {name};
   const c = {price};
@@ -20,6 +20,7 @@ export const ProductDescription = () => {
   const handleSubmit = () => {
     const elements =  JSON.stringify({ a, b, c, d });
     handleSubmitToStorage({ elements });
+    resetQuantity();
   };
 
   return (

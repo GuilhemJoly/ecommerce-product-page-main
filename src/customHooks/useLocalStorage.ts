@@ -1,6 +1,6 @@
 import { LocalStorageProps } from "../../typescript/types";
 
-export const useCart = () => {
+export const useLocalStorage = () => {
   const handleSubmitToStorage = ({ elements }: LocalStorageProps) => {    
     localStorage.setItem("cart", elements);
   };

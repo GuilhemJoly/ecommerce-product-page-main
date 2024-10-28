@@ -11,5 +11,9 @@ export const useQuantity = () => {
     if (quantity > 0) setQuantity(quantity - 1);
   };
 
-  return { quantity, incrementQuantity, decrementQuantity };
+  const resetQuantity = () => {
+    setQuantity(0);
+  };
+
+  return { quantity, incrementQuantity, decrementQuantity, resetQuantity };
 };
