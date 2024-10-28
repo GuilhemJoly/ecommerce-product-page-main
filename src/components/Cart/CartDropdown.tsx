@@ -1,9 +1,10 @@
+import { CartDropdownProps } from "../../../typescript/types";
 import Button from "../ui/Button";
 import "./CartDropDown.scss";
 
-const CartDropdown = () => {
+const CartDropdown: React.FC<CartDropdownProps> = ( {isOpen} ) => {
   return (
-    <div className="cartDropDown">
+    <div className={`cartDropDown ${ !isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
       <div className="cartItems">
         <div className="cartItem">
