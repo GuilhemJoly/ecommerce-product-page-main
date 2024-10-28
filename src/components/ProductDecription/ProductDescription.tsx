@@ -1,3 +1,4 @@
+import { useQuantity } from "../../customHooks/useQuantity";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 import Button from "../ui/Button";
 
@@ -6,6 +7,9 @@ import "./ProductDescription.scss";
 export const ProductDescription = () => {
   const { brand, name, description, price, discount, previousPrice } =
     sneakersDatas[0];
+
+  const { quantity, incrementQuantity, decrementQuantity } = useQuantity();
+
   return (
     <div className="productDescription">
       <h2 className="productBrand">{brand}</h2>
@@ -22,11 +26,18 @@ export const ProductDescription = () => {
       </div>
       <div className="addToCartSection">
         <div className="productQuantity">
-          <button className="quantityButton streched">-</button>
-          <span className="quantityNumber">0</span>
-          <button className="quantityButton">+</button>
+          <button
+            className="quantityButton streched"
+            onClick={decrementQuantity}
+          >
+            -
+          </button>
+          <span className="quantityNumber">{quantity}</span>
+          <button className="quantityButton" onClick={incrementQuantity}>
+            +
+          </button>
         </div>
-        <Button buttonName="addToCart" buttonClass="productAddToCart"/>
+        <Button buttonName="addToCart" buttonClass="productAddToCart" />
       </div>
     </div>
   );
