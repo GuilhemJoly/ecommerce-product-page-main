@@ -1,3 +1,4 @@
+import { json } from "react-router-dom";
 import { useQuantity } from "../../customHooks/useQuantity";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 import Button from "../ui/Button";
@@ -9,6 +10,10 @@ export const ProductDescription = () => {
     sneakersDatas[0];
 
   const { quantity, incrementQuantity, decrementQuantity } = useQuantity();
+  const handleSubmitToCart = () => {
+    const elementToCart = JSON.stringify({brand, name, price, quantity});
+    localStorage.setItem("cart", elementToCart);
+  };
 
   return (
     <div className="productDescription">
@@ -37,7 +42,7 @@ export const ProductDescription = () => {
             +
           </button>
         </div>
-        <Button buttonName="addToCart" buttonClass="productAddToCart" />
+        <Button buttonName="addToCart" buttonClass="productAddToCart" onClick={handleSubmitToCart}/>
       </div>
     </div>
   );

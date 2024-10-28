@@ -27,6 +27,7 @@ export interface ArrowButtonProps {
 export interface ButtonProps {
   buttonName: string;
   buttonClass: string;
+  onClick?: () => void;
 }
 
 export interface CartDropdownProps {

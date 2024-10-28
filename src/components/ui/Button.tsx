@@ -1,9 +1,9 @@
 import { ButtonProps } from "../../../typescript/types";
 import "./Button.scss";
 
-const Button: React.FC<ButtonProps> = ({buttonName, buttonClass}) => {
+const Button: React.FC<ButtonProps> = ({buttonName, buttonClass, onClick}) => {
   return (
-    <button className={`button ${buttonClass}`}>
+    <button className={`button ${buttonClass}`} onClick={onClick}>
       {buttonName === "addToCart" ? (
         <svg
           className="buttonCartImg"
