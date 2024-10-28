@@ -18,3 +18,7 @@ export interface SmallPicturesProps {
   selectedIndex: number;
   onThumbnailClick: (imgBig: string, index: number) => void;
 }
+
+export interface ArrowButtonProps {
+  isLeftButton: boolean;
+}

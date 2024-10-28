@@ -4,11 +4,19 @@
 .arrowButton {
     @include flex-center;
     position: absolute;
+    z-index: 4;
+    top: 44%;
+    right: -1.65rem;
     background-color: $white;
     width: 3.4rem;
     height: 3.4rem;
     border-radius: 50px;
     cursor: pointer;
+
+    &.leftButton {
+        rotate: 180deg;
+        left: -1.65rem;
+    }
 
     & .arrowSvg {
         stroke: $very-dark-blue;
