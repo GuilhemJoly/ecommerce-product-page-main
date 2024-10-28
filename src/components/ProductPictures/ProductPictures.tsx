@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 
-import "./ProductPicture.scss";
+import "./ProductPictures.scss";
 import Lightbox from "./Lightbox/Lightbox";
 import BigPicture from "./BigPicture/BigPicture";
 import SmallPictures from "./SmallPictures/SmallPictures";
