@@ -1,6 +1,7 @@
 import { useQuantity } from "../../customHooks/useQuantity";
 import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import { sneakersDatas } from "../../datas/sneakersDatas";
+import { useCart } from "../../customHooks/useCart";
 import Button from "../ui/Button";
 
 import "./ProductDescription.scss";
@@ -10,6 +11,7 @@ export const ProductDescription = () => {
     sneakersDatas[0];
 
   const { quantity, incrementQuantity, decrementQuantity, resetQuantity } = useQuantity();
+  const { cartItem, setCartItem, setEmptyCart } = useCart();
   const { handleSubmitToStorage } = useLocalStorage();
   
   const a = {brand};
@@ -22,7 +24,11 @@ export const ProductDescription = () => {
     const elements =  JSON.stringify({ a, b, c, d, e });
     handleSubmitToStorage({ elements });
     resetQuantity();
+    const newItem = { brand, name, price, quantity, imgSmall };
+    setCartItem([...cartItem, newItem]);
+    setEmptyCart(false);
   };
+
 
   return (
     <div className="productDescription">
