@@ -9,6 +9,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
     const name = cartItem?.b?.name || "Error";
     const price = cartItem?.c?.price || 0;
     const quantity = cartItem?.d?.quantity || 0;
+    const imgProduct = cartItem?.e?.imgSmall[0] || "";
 
     const finalPrice = price * quantity;
     
@@ -24,7 +25,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
           <div className="cartItem">
             <img
               className="cartImg"
-              src="public/images/fall-limited-edition-sneakers/image-product-1-thumbnail.jpg"
+              src={imgProduct}
             />
             <div className="cartItemDescription">
               <span>{name}</span>

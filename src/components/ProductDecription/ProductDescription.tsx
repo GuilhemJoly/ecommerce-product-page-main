@@ -6,19 +6,20 @@ import Button from "../ui/Button";
 import "./ProductDescription.scss";
 
 export const ProductDescription = () => {
-  const { brand, name, description, price, discount, previousPrice } =
+  const { brand, name, description, price, discount, previousPrice, imgSmall } =
     sneakersDatas[0];
 
   const { quantity, incrementQuantity, decrementQuantity, resetQuantity } = useQuantity();
   const { handleSubmitToStorage } = useLocalStorage();
-
+  
   const a = {brand};
   const b = {name};
   const c = {price};
   const d = {quantity};
+  const e = {imgSmall}
 
   const handleSubmit = () => {
-    const elements =  JSON.stringify({ a, b, c, d });
+    const elements =  JSON.stringify({ a, b, c, d, e });
     handleSubmitToStorage({ elements });
     resetQuantity();
   };
