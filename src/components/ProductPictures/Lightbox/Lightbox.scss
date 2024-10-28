@@ -16,7 +16,9 @@
     @include flex-center;
     flex-direction: column;
     width: 100%;
+    max-width: 1440px;
     height: 100%;
+    padding-top: 2.5rem;
 }
 .BigPicturesLightBoxContainer {
     width: 38.2%;
