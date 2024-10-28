@@ -12,6 +12,15 @@ const Lightbox: React.FC<LightboxProps> = ({
   onThumbnailClick,
   onClose,
 }) => {
+  const handlePrevClick = () => {
+    const newIndex = (selectedIndex - 1 + imgBig.length) % imgBig.length;
+    onThumbnailClick(imgBig[newIndex], newIndex);
+  };
+
+  const handleNextClick = () => {
+    const newIndex = (selectedIndex + 1) % imgBig.length;
+    onThumbnailClick(imgBig[newIndex], newIndex);
+  };
 
   return (
     <div className="lightbox">
@@ -31,8 +40,8 @@ const Lightbox: React.FC<LightboxProps> = ({
         </div>
         <div className="BigPicturesLightBoxContainer">
           <BigPicture image={image} />
-        <ArrowButton isLeftButton={true}/>
-        <ArrowButton isLeftButton={false}/>
+        <ArrowButton isLeftButton={true} imgChange={handlePrevClick}/>
+        <ArrowButton isLeftButton={false} imgChange={handleNextClick}/>
         </div>
         <div className="SmallPicturesLightBoxContainer">
           <SmallPictures

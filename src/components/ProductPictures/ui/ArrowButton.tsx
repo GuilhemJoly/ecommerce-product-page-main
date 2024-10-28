@@ -1,9 +1,9 @@
 import { ArrowButtonProps } from "../../../../typescript/types";
 import "./ArrowButton.scss";
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton }) => {
+const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton, imgChange }) => {
   return (
-    <div className={`arrowButton ${isLeftButton === true ? "leftButton" : ""}`}>
+    <div onClick={imgChange} className={`arrowButton ${isLeftButton === true ? "leftButton" : ""}`}>
       <svg
         className="arrowSvg"
         width="13"

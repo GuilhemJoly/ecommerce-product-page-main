@@ -21,4 +21,5 @@ export interface SmallPicturesProps {
 
 export interface ArrowButtonProps {
   isLeftButton: boolean;
+  imgChange: () => void;
 }
