@@ -1,3 +1,4 @@
+import CartDropdown from './Cart/CartDropdown';
 import './Header.scss';
 import NavDesktop from "./Navigation/NavDesktop";
 
@@ -11,6 +12,7 @@ const Header = () => {
         <img src={cartPicture} alt="cart" className="cart"></img>
         <img src={avatar} alt="Avatar" className="avatar" />
       </div>
+      <CartDropdown />
     </div>
   );
 };
