@@ -1,0 +1,23 @@
+@import "../../../Scss-variables/colors";
+@import "../../../Scss-variables/mixins";
+
+.arrowButton {
+    @include flex-center;
+    position: absolute;
+    background-color: $white;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50px;
+    cursor: pointer;
+
+    & .arrowSvg {
+        stroke: $very-dark-blue;
+        transition: stroke 0.1s ease;
+        padding: 1.2rem;
+        border-radius: 50px;
+
+        &:hover {
+            stroke: $orange;
+        }
+    }
+}
