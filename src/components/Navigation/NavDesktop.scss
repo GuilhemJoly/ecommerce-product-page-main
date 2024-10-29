@@ -17,3 +17,10 @@ nav {
         }
     }
 }
+@media (max-width: 1024px) {
+    nav {
+        & ul {
+            gap: 1rem;
+        }
+    }
+}

@@ -67,3 +67,12 @@ a {
 h2 {
   font-size: $h2-font-size;
 }
+
+@media (max-width: 1024px) {
+  .header {
+    width: 95%;
+  }
+    .logo {
+      margin-right: 0;
+    }
+}
