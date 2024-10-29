@@ -25,8 +25,16 @@
     box-sizing: border-box;
 }
 .avatar {
-    width: 3.1rem;
-    height: 3.1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+
+    &:hover {
+        cursor: pointer;
+        border: 2px solid $orange;
+    }
 }
 a {
     text-decoration: none;
