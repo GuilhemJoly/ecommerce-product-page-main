@@ -3,8 +3,10 @@
 @import "../../Scss-variables/colors.scss";
 
 .button {
+    position: relative;
+    display: inline-block;
     @include flex-center;
-    background-color: $orange;
+    background-color: $white;
     box-sizing: border-box;
     border: none;
     color: $very-dark-blue;
@@ -12,4 +14,27 @@
     font-weight: $font-weight-bold;
     border-radius: 0.6rem;
     cursor: pointer;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $orange;
+        z-index: 0;
+        transition: opacity 0.2s;
+    }
+
+    &:hover::before {
+        opacity: 0.6;
+    }
+
+    .buttonText {
+        display: flex;
+        position: relative;
+        z-index: 1;
+    }
 }
