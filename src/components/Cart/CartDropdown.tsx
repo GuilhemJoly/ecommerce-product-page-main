@@ -1,25 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartDropdownProps } from "../../../typescript/types";
 import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import Button from "../ui/Button";
 import "./CartDropDown.scss";
+import { useCart } from "../../customHooks/useCart";
 
 const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
     const [emptyCart, setEmptyCart] = useState(false);
     
-    const {handleGetElementFromStorage, handleRemoveFromStorage} = useLocalStorage();
-    let cartItem = handleGetElementFromStorage();
-    const name = cartItem?.b?.name || "Error";
-    const price = cartItem?.c?.price || 0;
-    const quantity = cartItem?.d?.quantity || 0;
-    const imgProduct = cartItem?.e?.imgSmall[0] || "";
+    const {handleRemoveFromStorage, handleGetElementFromStorage} = useLocalStorage();
+    const { cartItem, setCartItem} = useCart();
+
+    const name = cartItem?.[0]?.name || "";
+    const price = cartItem?.[0]?.price || 0;
+    const quantity = cartItem?.[0]?.quantity || 0;
+    const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
 
     const finalPrice = price * quantity;
 
+    useEffect(() => {
+      const storageItem = handleGetElementFromStorage();
+      if (storageItem) {
+        const cartElements = {
+          brand: storageItem?.a?.brand || "",
+          name: storageItem?.b?.name || "",
+          price: storageItem?.c?.price || 0,
+          quantity: storageItem?.d?.quantity || 0,
+          imgSmall: storageItem?.e?.imgSmall || [""],
+        };
+  
+        if (cartItem.length > 0) {
+          setEmptyCart(false);
+          console.log("cartItem", cartItem);
+        } else if (storageItem) {
+          console.log("local storage", cartElements);
+          setCartItem([cartElements]);
+          setEmptyCart(false);
+        } else {
+          setEmptyCart(true);
+          console.log("empty");
+        }
+      }
+    }, [cartItem, handleGetElementFromStorage, setCartItem, setEmptyCart]);
+
     const handleDeleteCart = () => {
         handleRemoveFromStorage();
-        cartItem = [...[]];
         setEmptyCart(true);
+        setCartItem([]);
     };
     
   return (
