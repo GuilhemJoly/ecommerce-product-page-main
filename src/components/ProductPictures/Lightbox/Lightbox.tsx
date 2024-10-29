@@ -40,8 +40,8 @@ const Lightbox: React.FC<LightboxProps> = ({
         </div>
         <div className="BigPicturesLightBoxContainer">
           <BigPicture image={image} />
-        <ArrowButton isLeftButton={true} imgChange={handlePrevClick}/>
-        <ArrowButton isLeftButton={false} imgChange={handleNextClick}/>
+          <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
+          <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>
         <div className="SmallPicturesLightBoxContainer">
           <SmallPictures
