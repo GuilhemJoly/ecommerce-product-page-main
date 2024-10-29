@@ -1,0 +1,15 @@
+@import '../../Scss-variables/mixins';
+@import '../../Scss-variables/colors';
+
+.notificationBadge {
+    @include flex-center;
+    position: absolute;
+    top: -0.4rem;
+    left: 0.6rem;
+    background-color: $orange;
+    width: 1.1rem;
+    height: 0.8rem;
+    border-radius: 15px;
+    font-size: 0.6rem;
+    color: $white;
+}
