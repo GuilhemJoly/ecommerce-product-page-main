@@ -5,7 +5,7 @@ import { CartContextProps } from "../../typescript/types";
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [emptyCart, setEmptyCart] = useState(false);
+  const [emptyCart, setEmptyCart] = useState(true);
   const { handleGetElementFromStorage, handleRemoveFromStorage } = useLocalStorage();
   const [cartItem, setCartItem] = useState(handleGetElementFromStorage() || []);
 
@@ -19,7 +19,6 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           quantity: storageItem?.d?.quantity || 0,
           imgSmall: storageItem?.e?.imgSmall || [""],
         };
-  
         if (cartItem.length > 0) {
           setEmptyCart(false);
           console.log("cartItem", cartItem);
