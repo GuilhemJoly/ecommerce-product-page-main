@@ -1,7 +1,7 @@
 import { LightboxProps } from "../../../../typescript/types";
 import BigPicture from "../BigPicture/BigPicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
-import ArrowButton from "../ui/ArrowButton";
+import ArrowButton from "../../ui/ArrowButton";
 import "./Lightbox.scss";
 
 const Lightbox: React.FC<LightboxProps> = ({

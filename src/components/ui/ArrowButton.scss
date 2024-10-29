@@ -1,5 +1,5 @@
-@import "../../../Scss-variables/colors";
-@import "../../../Scss-variables/mixins";
+@import "../../Scss-variables/colors";
+@import "../../Scss-variables/mixins";
 
 .arrowButton {
     @include flex-center;

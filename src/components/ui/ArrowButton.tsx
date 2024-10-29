@@ -1,4 +1,4 @@
-import { ArrowButtonProps } from "../../../../typescript/types";
+import { ArrowButtonProps } from "../../../typescript/types";
 import "./ArrowButton.scss";
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton, imgChange }) => {
