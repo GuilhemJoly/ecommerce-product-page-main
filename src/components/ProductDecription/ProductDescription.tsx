@@ -21,6 +21,7 @@ export const ProductDescription = () => {
   const e = {imgSmall}
 
   const handleSubmit = () => {
+    if (quantity === 0) return;
     const elements =  JSON.stringify({ a, b, c, d, e });
     handleSubmitToStorage({ elements });
     resetQuantity();
