@@ -1,6 +1,16 @@
-import './NotificationBadge.scss';
+import { useCart } from "../../customHooks/useCart";
+import "./NotificationBadge.scss";
 
-const NotificationBadge = () => { 
-    return <div className="notificationBadge">3</div>;
+const NotificationBadge = () => {
+  const { cartItem } = useCart();
+  return (
+    <>
+      {cartItem.length > 0 && cartItem?.[0]?.quantity > 0 ? (
+        <div className="notificationBadge">{cartItem?.[0]?.quantity}</div>
+      ) : (
+        ""
+      )}
+    </>
+  );
 };
 export default NotificationBadge;
