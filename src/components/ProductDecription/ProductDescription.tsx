@@ -1,11 +1,34 @@
+import { useQuantity } from "../../customHooks/useQuantity";
+import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import { sneakersDatas } from "../../datas/sneakersDatas";
+import { useCart } from "../../customHooks/useCart";
 import Button from "../ui/Button";
 
 import "./ProductDescription.scss";
 
 export const ProductDescription = () => {
-  const { brand, name, description, price, discount, previousPrice } =
+  const { brand, name, description, price, discount, previousPrice, imgSmall } =
     sneakersDatas[0];
+
+  const { quantity, incrementQuantity, decrementQuantity, resetQuantity } = useQuantity();
+  const { setCartItem, setEmptyCart } = useCart();
+  const { handleSubmitToStorage } = useLocalStorage();
+  
+  const a = {brand};
+  const b = {name};
+  const c = {price};
+  const d = {quantity};
+  const e = {imgSmall}
+
+  const handleSubmit = () => {
+    const elements =  JSON.stringify({ a, b, c, d, e });
+    handleSubmitToStorage({ elements });
+    resetQuantity();
+    setCartItem([{ brand, name, price, quantity, imgSmall }]);
+    setEmptyCart(false);
+  };
+
+
   return (
     <div className="productDescription">
       <h2 className="productBrand">{brand}</h2>
@@ -22,11 +45,22 @@ export const ProductDescription = () => {
       </div>
       <div className="addToCartSection">
         <div className="productQuantity">
-          <button className="quantityButton streched">-</button>
-          <span className="quantityNumber">0</span>
-          <button className="quantityButton">+</button>
+          <button
+            className="quantityButton streched"
+            onClick={decrementQuantity}
+          >
+            -
+          </button>
+          <span className="quantityNumber">{quantity}</span>
+          <button className="quantityButton" onClick={incrementQuantity}>
+            +
+          </button>
         </div>
-        <Button buttonName="addToCart" buttonClass="productAddToCart"/>
+        <Button
+          buttonName="addToCart"
+          buttonClass="productAddToCart"
+          onClick={handleSubmit}
+        />
       </div>
     </div>
   );

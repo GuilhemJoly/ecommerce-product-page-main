@@ -7,7 +7,6 @@ const Header = () => {
   const avatar = "public/images/image-avatar.png";
   const cartPicture = "public/images/icon-cart.svg";
   const [isOpen, setIsOpen] = useState(false);
-  const [isEmpty, setIsEmpty] = useState(true);
   const toggleOpenCart = () => {
     setIsOpen(!isOpen);
   };
@@ -19,7 +18,7 @@ const Header = () => {
         <img src={cartPicture} alt="cart" className="cart" onClick={toggleOpenCart}></img>
         <img src={avatar} alt="Avatar" className="avatar" />
       </div>
-      <CartDropdown isOpen={isOpen} isEmpty={isEmpty}/>
+      <CartDropdown isOpen={isOpen} />
     </div>
   );
 };

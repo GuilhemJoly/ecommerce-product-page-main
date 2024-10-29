@@ -27,9 +27,21 @@ export interface ArrowButtonProps {
 export interface ButtonProps {
   buttonName: string;
   buttonClass: string;
+  onClick?: () => void;
 }
 
 export interface CartDropdownProps {
   isOpen: boolean;
-  isEmpty: boolean;
+}
+
+export interface LocalStorageProps {
+  elements: string
+}
+
+export interface CartContextProps {
+  cartItem: { brand: string; name: string; quantity: number; price: number, imgSmall: string[] }[];
+  setCartItem: (cartItem: { brand: string; name: string; quantity: number; price: number, imgSmall: string[] }[]) => void;
+  emptyCart: boolean;
+  setEmptyCart: (empty: boolean) => void;
+  handleDeleteCart: () => void;
 }
