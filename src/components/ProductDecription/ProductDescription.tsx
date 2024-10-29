@@ -58,7 +58,7 @@ export const ProductDescription = () => {
           </button>
         </div>
         <Button
-          buttonName="addToCart"
+          buttonName="Add to cart"
           buttonClass="productAddToCart"
           onClick={handleSubmit}
         />

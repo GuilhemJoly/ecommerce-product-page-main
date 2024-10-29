@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button className={`button ${buttonClass}`} onClick={onClick}>
       <span className="buttonText">
-        {buttonName === "addToCart" ? (
+        {buttonName === "Add to cart" ? (
           <svg
             className="buttonCartImg"
             xmlns="http://www.w3.org/2000/svg"
