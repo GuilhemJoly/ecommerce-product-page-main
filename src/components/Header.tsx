@@ -16,7 +16,7 @@ const Header = () => {
       <NavDesktop />
       <div className="cartAndAvatar">
         <div className="cartAndNotificationContainer">
-          <div className="clickablebutton" onClick={toggleOpenCart}>
+          <div className="clickableButton" onClick={toggleOpenCart}>
             <svg
               className="cart"
               width="22"
