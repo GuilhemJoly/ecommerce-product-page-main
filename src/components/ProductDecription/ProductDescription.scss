@@ -99,6 +99,12 @@
         height: 2.5rem;
         border: none;
         margin:0 0.1rem 0.2rem 0;
+        transition: opacity 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.6;
+        }
     }
     & .streched {
         transform: scaleX(1.7);

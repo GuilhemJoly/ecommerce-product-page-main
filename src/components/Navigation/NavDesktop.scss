@@ -1,4 +1,5 @@
 @import '../../Scss-variables/mixins';
+@import '../../Scss-variables/colors';
 
 nav {
     display: flex;
@@ -8,10 +9,11 @@ nav {
     & ul {
         @include flex-center;
         gap: 2rem;
-
+        
         & li {
             list-style: none;
             cursor: pointer;
+            height: 2rem;
         }
     }
 }
