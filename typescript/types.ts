@@ -43,4 +43,5 @@ export interface CartContextProps {
   setCartItem: (cartItem: { brand: string; name: string; quantity: number; price: number, imgSmall: string[] }[]) => void;
   emptyCart: boolean;
   setEmptyCart: (empty: boolean) => void;
+  handleDeleteCart: () => void;
 }
