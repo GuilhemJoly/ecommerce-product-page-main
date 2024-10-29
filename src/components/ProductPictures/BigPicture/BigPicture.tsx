@@ -1,6 +1,5 @@
-import './BigPicture.scss';
 import { BigPictureProps } from '../../../../typescript/types';
-
+import './BigPicture.scss';
 
 const BigPicture: React.FC<BigPictureProps> = ({ image, onClick }) => {
     return (

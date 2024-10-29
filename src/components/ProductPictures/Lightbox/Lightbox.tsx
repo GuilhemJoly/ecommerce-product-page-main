@@ -1,7 +1,7 @@
 import { LightboxProps } from "../../../../typescript/types";
 import BigPicture from "../BigPicture/BigPicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
-import ArrowButton from "../ui/ArrowButton";
+import ArrowButton from "../../ui/ArrowButton";
 import "./Lightbox.scss";
 
 const Lightbox: React.FC<LightboxProps> = ({
@@ -40,8 +40,8 @@ const Lightbox: React.FC<LightboxProps> = ({
         </div>
         <div className="BigPicturesLightBoxContainer">
           <BigPicture image={image} />
-        <ArrowButton isLeftButton={true} imgChange={handlePrevClick}/>
-        <ArrowButton isLeftButton={false} imgChange={handleNextClick}/>
+          <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
+          <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>
         <div className="SmallPicturesLightBoxContainer">
           <SmallPictures

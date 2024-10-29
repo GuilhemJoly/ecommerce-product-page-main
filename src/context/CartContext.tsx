@@ -5,9 +5,10 @@ import { CartContextProps } from "../../typescript/types";
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [emptyCart, setEmptyCart] = useState(true);
+  
   const { handleGetElementFromStorage, handleRemoveFromStorage } = useLocalStorage();
   const [cartItem, setCartItem] = useState(handleGetElementFromStorage() || []);
+  const [emptyCart, setEmptyCart] = useState(true);
 
     useEffect(() => {
       const storageItem = handleGetElementFromStorage();
@@ -21,14 +22,13 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         };
         if (cartItem.length > 0) {
           setEmptyCart(false);
-          console.log("cartItem", cartItem);
-        } else if (storageItem) {
-          console.log("local storage", cartElements);
+        } 
+        else if (storageItem) {
           setCartItem([cartElements]);
           setEmptyCart(false);
-        } else {
+        } 
+        else {
           setEmptyCart(true);
-          console.log("empty");
         }
       }
     }, [cartItem, handleGetElementFromStorage, setCartItem, emptyCart, setEmptyCart]);
