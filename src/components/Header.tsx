@@ -1,15 +1,14 @@
 import { useState } from "react";
-import CartDropdown from "./Cart/CartDropdown";
-import "./Header.scss";
 import NavDesktop from "./Navigation/NavDesktop";
+import CartDropdown from "./Cart/CartDropdown";
 import NotificationBadge from "./ui/NotificationBadge";
+import "./Header.scss";
 
 const Header = () => {
   const avatar = "public/images/image-avatar.png";
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpenCart = () => {
-    setIsOpen(!isOpen);
-  };
+
+  const toggleOpenCart = () => { setIsOpen(!isOpen)};
 
   return (
     <div className="header">
