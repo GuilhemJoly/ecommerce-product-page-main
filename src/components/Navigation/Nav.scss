@@ -35,7 +35,7 @@ nav {
     }
   }
 }
-@media (max-width: 768px) {
+@media (width < 768px) {
   nav {
     z-index: 5;
     top: 0;
@@ -64,7 +64,7 @@ nav {
   .hidden {
     display: none;
   }
-  .closeIcon {
+    .closeIcon {
     position: absolute;
     display: block;
     cursor: pointer;
