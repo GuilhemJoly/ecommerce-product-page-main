@@ -79,10 +79,10 @@ h2 {
 
 @media (max-width: 768px) {
   .header {
+    padding-top: 1.3rem;
     height: 2.7rem;
     border-bottom: none;
-    padding-top: 1.3rem;
-    position: relative;
+    justify-content: end;
   }
   a {
     font-weight: $font-weight-bold;
@@ -93,5 +93,16 @@ h2 {
       border-bottom: none;
       transition: none;
     }
+  }
+  .cartAndAvatar {
+    gap: 1.2rem;
+   margin-right: 0.7rem;
+  }
+  .cart {
+    margin-top: 0.2rem;
+  }
+  .avatar {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 }
