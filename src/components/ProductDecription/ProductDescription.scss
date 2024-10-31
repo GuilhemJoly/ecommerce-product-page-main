@@ -74,7 +74,6 @@
 }
 .addToCartSection {
     @include flex-center;
-    display: flex;
     gap: 1rem;
     width: 100%;
     height: 5rem;
@@ -150,5 +149,29 @@
         width: 12rem;
         height: 3rem;
     }
+}
+@media (max-width: 768px) {
+    .productDescription {
+        width: 90%;
+        height: fit-content;
+        padding: 1rem 0rem 0 0rem;
+    }
+    .addToCartSection {
+        flex-direction: column;
+        height: 12rem;
+        justify-content: start;
+        & .productQuantity {
+            width: 100%;
+            height: 3.5rem;
+            & .quantityButton {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
 
+    }
+    .productAddToCart {
+        width: 100%;
+        height: 3.5rem;
+    }   
 }
