@@ -26,6 +26,7 @@ nav {
 .closeIcon {
   fill: $dark-grayish-blue;
   display: none;
+  width: 1.5rem;
 }
 @media (max-width: 1024px) {
   nav {
@@ -36,12 +37,11 @@ nav {
 }
 @media (max-width: 768px) {
   nav {
-    position: fixed;
     z-index: 5;
     top: 0;
     left: 0;
     & ul {
-      position: absolute;
+      position: fixed;
       flex-direction: column;
       justify-content: start;
       align-items: start;
@@ -51,27 +51,28 @@ nav {
       top: -1rem;
       left: 0;
       padding-top: 5.6rem;
-      padding-left: 1.5rem;
+      padding-left: 1.55rem;
 
       & li {
         font-size: 1.15rem;
       }
     }
   }
+  .fixed {
+    position: fixed;
+  }
   .hidden {
     display: none;
   }
   .closeIcon {
+    position: absolute;
     display: block;
-    top: 1rem;
-    right: 1rem;
     cursor: pointer;
     z-index: 6;
-    position: absolute;
     top: 1.5rem;
-    left: 1.5rem;
+    left: 0.95rem;
   }
   .logo {
-    margin: 0.4rem 0 0 3.5rem;
+    margin: 0 0 0.2rem 2.95rem;
   }
 }
