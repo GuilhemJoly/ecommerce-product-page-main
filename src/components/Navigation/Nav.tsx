@@ -27,6 +27,7 @@ const NavDesktop = () => {
   }, []);
 
   return (
+    <>
     <nav>
       <img src="public/images/logo.svg" alt="logo" className="logo" />
       <div className="closeIcon" onClick={toggleNav}>
@@ -66,6 +67,8 @@ const NavDesktop = () => {
         </li>
       </ul>
     </nav>
+      {isNavOpen === "hidden" ? "" : <div className="greyBackground"></div>}
+    </>
   );
 };
 export default NavDesktop;
