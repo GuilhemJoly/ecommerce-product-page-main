@@ -4,3 +4,11 @@
     border-radius: 15px;
     user-select: none;
 }
+
+@media (max-width: 768px) {
+    .productBigPicture {
+        object-fit: cover;
+        border-radius: 0;
+        user-select: none;
+    }
+}
