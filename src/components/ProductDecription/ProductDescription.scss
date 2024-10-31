@@ -199,15 +199,21 @@
         height: 12rem;
         justify-content: start;
         margin-top: 1.4rem;
+        width: 100%;
         & .productQuantity {
             width: 100%;
             height: 3.5rem;
             & .quantityButton {
                 width: 2rem;
                 height: 2rem;
+                &:nth-child(3) {
+                    padding-right: 1.6rem;
+                }
             }
             & .streched {
-             
+             width: 1.2rem;
+             margin-bottom: 0.9rem;
+             padding-left: 0.9rem;
             }
         }
 
