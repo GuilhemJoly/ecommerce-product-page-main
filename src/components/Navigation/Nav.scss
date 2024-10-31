@@ -1,71 +1,77 @@
-@import '../../Scss-variables/mixins';
-@import '../../Scss-variables/colors';
+@import "../../Scss-variables/mixins";
+@import "../../Scss-variables/colors";
 
 nav {
-    display: flex;
-    width: 38rem;
-    box-sizing: border-box;
+  display: flex;
+  width: 38rem;
+  box-sizing: border-box;
 
-    & ul {
-        @include flex-center;
-        gap: 2rem;
-        
-        & li {
-            list-style: none;
-            cursor: pointer;
-            height: 2rem;
-        }
+  & ul {
+    @include flex-center;
+    gap: 2rem;
+
+    & li {
+      list-style: none;
+      cursor: pointer;
+      height: 2rem;
     }
+  }
+}
+.logo {
+  width: 8.7rem;
+  height: 3rem;
+  object-fit: contain;
+  margin-right: 1rem;
 }
 .closeIcon {
-    fill: $dark-grayish-blue;
-    display: none;
+  fill: $dark-grayish-blue;
+  display: none;
 }
 @media (max-width: 1024px) {
-    nav {
-        & ul {
-            gap: 1rem;
-        }
+  nav {
+    & ul {
+      gap: 1rem;
     }
+  }
 }
 @media (max-width: 768px) {
-    nav {
-        position: fixed;
-        z-index: 5;
-        top: 0;
-        left: 0;
+  nav {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
     & ul {
-        position: absolute;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        background-color: $white;
-        width: 12.6rem;
-        height: 100vh;
-        top: -1rem;
-        left: 0;
-        padding-top: 5.6rem;
-        padding-left: 1.5rem;
+      position: absolute;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      background-color: $white;
+      width: 12.6rem;
+      height: 100vh;
+      top: -1rem;
+      left: 0;
+      padding-top: 5.6rem;
+      padding-left: 1.5rem;
 
-        & li {
-            font-size: 1.15rem;
-        }
+      & li {
+        font-size: 1.15rem;
+      }
     }
-    } 
-    .hidden {
-        display: none;
-    }
-    .closeIcon {
-        display: block;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-        z-index: 6;
-        position: absolute;
-        top: 1.5rem;
-        left: 1.5rem;
-    }  
-    .logo {
-        margin: 0.4rem 0 0 3.5rem;
-    }
+  }
+  .hidden {
+    display: none;
+  }
+  .closeIcon {
+    display: block;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 6;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  .logo {
+    margin: 0.4rem 0 0 3.5rem;
+  }
 }

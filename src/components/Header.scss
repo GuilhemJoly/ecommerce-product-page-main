@@ -11,12 +11,6 @@
   box-sizing: border-box;
   border-bottom: 1px solid $grayish-blue;
 }
-.logo {
-  width: 8.7rem;
-  height: 3rem;
-  object-fit: contain;
-  margin-right: 1rem;
-}
 .cartAndAvatar {
   @include flex-center;
   justify-content: flex-end;
