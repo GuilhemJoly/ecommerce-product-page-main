@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavDesktop from "./Navigation/NavDesktop";
+import NavDesktop from "./Navigation/Nav";
 import CartDropdown from "./Cart/CartDropdown";
 import NotificationBadge from "./ui/NotificationBadge";
 import "./Header.scss";

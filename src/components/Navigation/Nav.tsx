@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./NavDesktop.scss";
+import "./Nav.scss";
 
 const NavDesktop = () => {
   const [isNavOpen, setIsNavOpen] = useState("hidden");
