@@ -45,3 +45,12 @@ export interface CartContextProps {
   setEmptyCart: (empty: boolean) => void;
   handleDeleteCart: () => void;
 }
+
+export interface ImageNavigationContextProps {
+  currentIndex: number;
+  incrementIndex: () => void;
+  decrementIndex: () => void;
+  setIndex: (index: number) => void;
+  handlePrevClick: () => void;
+  handleNextClick: () => void;
+}
