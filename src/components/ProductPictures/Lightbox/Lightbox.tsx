@@ -10,7 +10,7 @@ const Lightbox: React.FC<LightboxProps> = ({
   imgSmall,
   onClose,
 }) => {
-  const { currentIndex, handlePrevClick, handleNextClick, setIndex } = useImageNavigation();
+  const { currentIndex, handlePrevClick, handleNextClick, setImgIndex } = useImageNavigation();
 
   return (
     <div className="lightbox">
@@ -38,7 +38,7 @@ const Lightbox: React.FC<LightboxProps> = ({
             imgSmall={imgSmall}
             imgBig={imgBig}
             selectedIndex={currentIndex}
-            onThumbnailClick={(_imgBig, index) => setIndex(index)}
+            onThumbnailClick={(_imgBig, index) => setImgIndex(index)}
           />
         </div>
       </div>

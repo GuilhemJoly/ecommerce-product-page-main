@@ -10,9 +10,9 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Router>
       <CartProvider>
-      <ImageNavigationProvider>
-        <App />
-      </ImageNavigationProvider>
+        <ImageNavigationProvider>
+          <App />
+        </ImageNavigationProvider>
       </CartProvider>
     </Router>
   </StrictMode>

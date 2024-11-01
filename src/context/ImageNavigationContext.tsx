@@ -4,32 +4,32 @@ import { sneakersDatas } from "../datas/sneakersDatas";
 
 export const ImageNavigationContext = createContext<ImageNavigationContextProps | undefined>(undefined);
 
-export const ImageNavigationProvider: React.FC<{ children: ReactNode; max: number }> = ({ children }) => {
+export const ImageNavigationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const max = sneakersDatas[0].imgBig.length;
+  const max = sneakersDatas[0].imgBig.length; 
 
-  const incrementIndex = () => {
+  const incrementImgIndex = () => {
     setCurrentIndex((currentIndex + 1) % max);
   };
 
-  const decrementIndex = () => {
+  const decrementImgIndex = () => {
     setCurrentIndex((currentIndex - 1 + max) % max);
   };
 
-  const setIndex = (index: number) => {
+  const setImgIndex = (index: number) => {
     setCurrentIndex(index);
   };
 
   const handlePrevClick = () => {
-    decrementIndex();
+    decrementImgIndex();
   };
 
   const handleNextClick = () => {
-    incrementIndex();
+    incrementImgIndex();
   };
 
   return (
-    <ImageNavigationContext.Provider value={{ currentIndex, incrementIndex, decrementIndex, setIndex, handlePrevClick, handleNextClick }}>
+    <ImageNavigationContext.Provider value={{ currentIndex, incrementImgIndex, decrementImgIndex, setImgIndex, handlePrevClick, handleNextClick }}>
       {children}
     </ImageNavigationContext.Provider>
   );

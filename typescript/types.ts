@@ -45,9 +45,9 @@ export interface CartContextProps {
 
 export interface ImageNavigationContextProps {
   currentIndex: number;
-  incrementIndex: () => void;
-  decrementIndex: () => void;
-  setIndex: (index: number) => void;
+  incrementImgIndex: () => void;
+  decrementImgIndex: () => void;
+  setImgIndex: (index: number) => void;
   handlePrevClick: () => void;
   handleNextClick: () => void;
 }
