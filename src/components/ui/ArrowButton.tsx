@@ -14,7 +14,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton, imgChange }) =>
           d="m2 1 8 8-8 8"
           stroke-width="3"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         />
       </svg>
     </div>

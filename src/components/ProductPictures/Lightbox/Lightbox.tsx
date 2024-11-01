@@ -29,7 +29,7 @@ const Lightbox: React.FC<LightboxProps> = ({
           </svg>
         </div>
         <div className="BigPicturesLightBoxContainer">
-          <BigPicture image={imgBig[currentIndex]} />
+          <BigPicture image={imgBig[currentIndex]} imgBig={imgBig} isLightboxOpen/>
           <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
           <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>

@@ -7,11 +7,16 @@ import BigPicture from "./BigPicture/BigPicture";
 import SmallPictures from "./SmallPictures/SmallPictures";
 
 export const ProductPictures = () => {
-  
   const { imgBig, imgSmall } = sneakersDatas[0];
   const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const staticImg = [
+    sneakersDatas[0].imgBig[0],
+    sneakersDatas[0].imgBig[0],
+    sneakersDatas[0].imgBig[0],
+    sneakersDatas[0].imgBig[0],
+  ];
 
   const handleThumbnailClick = (imgBig: string, index: number) => {
     setSelectedImage(imgBig);
@@ -26,7 +31,12 @@ export const ProductPictures = () => {
 
   return (
     <div className="productPictures">
-      <BigPicture image={selectedImage} onClick={handleImageClick}/>
+      <BigPicture
+        image={selectedImage}
+        onClick={handleImageClick}
+        imgBig={staticImg}
+        isLightboxOpen={isLightboxOpen}
+      />
       <SmallPictures
         imgSmall={imgSmall}
         imgBig={imgBig}
@@ -35,7 +45,7 @@ export const ProductPictures = () => {
       />
       {isLightboxOpen && (
         <Lightbox
-          imgSmall={imgSmall}         
+          imgSmall={imgSmall}
           imgBig={imgBig}
           onClose={handleCloseLightbox}
         />
