@@ -11,16 +11,11 @@
   box-sizing: border-box;
   border-bottom: 1px solid $grayish-blue;
 }
-.logo {
-  width: 8.7rem;
-  height: 3rem;
-  object-fit: contain;
-  margin-right: 1rem;
-}
 .cartAndAvatar {
   @include flex-center;
   justify-content: flex-end;
   width: 40%;
+  width: 8rem;
   gap: 2.9rem;
   box-sizing: border-box;
 }
@@ -65,4 +60,44 @@ a {
 }
 h2 {
   font-size: $h2-font-size;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    width: 95%;
+  }
+    .logo {
+      margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 1.3rem;
+    height: 2.7rem;
+    border-bottom: none;
+    justify-content: end;
+  }
+  a {
+    font-weight: $font-weight-bold;
+    color: $very-dark-blue;
+    &:hover {
+      color: $very-dark-blue;
+      padding-bottom: 0;
+      border-bottom: none;
+      transition: none;
+    }
+  }
+  .cartAndAvatar {
+    gap: 1.2rem;
+   margin-right: 0.7rem;
+   z-index: 3;
+  }
+  .cart {
+    margin-top: 0.2rem;
+  }
+  .avatar {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }

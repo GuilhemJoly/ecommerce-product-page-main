@@ -93,3 +93,45 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .cartDropDown {
+    width: 23.5rem;
+    height: 16rem;
+    min-height: 15.4rem;
+    top: 4.7rem;
+    right: 0;
+    & h4 {
+      margin-top: 1.22rem;
+    }
+  }
+  .cartItems {
+    .cartItem {
+      padding-top:0;
+    }
+  }
+  .cartButton {
+    margin-bottom: 1rem;
+    height: 3.5rem;
+  }
+}
+@media (max-width: 390px) {
+  .cartDropDown {
+    width: 100%;
+  }
+  .cartItems {
+    .cartItem {
+      font-size: 4.3vw;
+      width: 88%;
+      justify-content: space-between;
+    }
+  }
+  .cartImg {
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+  }
+  .cartButton {
+    height: 3.5rem;
+    width: 87.5%;
+  }
+}

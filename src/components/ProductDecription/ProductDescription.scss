@@ -53,6 +53,7 @@
     height: 0.85rem;
     width: 2.1rem;
     padding: 0.4rem 0.5rem;
+    margin-top: 0.1rem;
     border-radius: 0.5rem;
 }
 .productPreviousPrice {
@@ -74,7 +75,6 @@
 }
 .addToCartSection {
     @include flex-center;
-    display: flex;
     gap: 1rem;
     width: 100%;
     height: 5rem;
@@ -129,4 +129,103 @@
         width: 1.2rem;
         fill: $very-dark-blue;
     }
+}
+
+@media (max-width: 1024px) {
+    .productDescription {
+        width: 40%;
+        height: 30rem;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+    .productName {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .productQuantity{
+        width: 8rem;
+        height: 3rem;
+    }
+    .productAddToCart{
+        width: 12rem;
+        height: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    .productDescription {
+        width: 89%;
+        height: fit-content;
+        padding: 1rem 0rem 0 0rem;
+    }
+    .productBrand {
+        font-size: 0.77rem;
+    }
+    .productName {
+        font-size: 1.74rem;
+        margin: 0.9rem 0 1rem 0;
+    }
+    .productParagraphDescription {
+        line-height: 1.55rem;
+        font-size: 0.94rem;
+    }
+    .productPriceElements {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 99%;
+    }
+    .productPriceAndDiscount {
+        margin-bottom: 0;
+    }
+    .productDiscount {
+        padding: 0.4rem 0.55rem;
+        border-radius: 6px;
+    }
+    .productPreviousPrice {
+        height: fit-content;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 55%; 
+            height: 1px;
+            background-color: $dark-grayish-blue;
+        }
+    }
+    .addToCartSection {
+        flex-direction: column;
+        height: 12rem;
+        justify-content: start;
+        margin-top: 1.4rem;
+        width: 100%;
+        & .productQuantity {
+            width: 100%;
+            height: 3.5rem;
+            & .quantityButton {
+                width: 2rem;
+                height: 2rem;
+                &:nth-child(3) {
+                    padding-right: 1.6rem;
+                }
+            }
+            & .streched {
+             width: 1.2rem;
+             margin-bottom: 0.9rem;
+             padding-left: 0.9rem;
+            }
+        }
+
+    }
+    .productAddToCart {
+        width: 100%;
+        height: 3.5rem;
+    }   
+}
+@media (max-width: 390px) {
+    .productDescription {
+        width: 87%;
+    }
+
 }
