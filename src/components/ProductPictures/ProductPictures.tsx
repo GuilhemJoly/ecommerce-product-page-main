@@ -11,12 +11,9 @@ export const ProductPictures = () => {
   const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const staticImg = [
-    sneakersDatas[0].imgBig[0],
-    sneakersDatas[0].imgBig[0],
-    sneakersDatas[0].imgBig[0],
-    sneakersDatas[0].imgBig[0],
-  ];
+
+  //* staticImg is used to store the selected image in the page when the lightbox is open
+  const staticImg = Array(imgBig.length).fill(sneakersDatas[0].imgBig[selectedIndex]);
 
   const handleThumbnailClick = (imgBig: string, index: number) => {
     setSelectedImage(imgBig);
