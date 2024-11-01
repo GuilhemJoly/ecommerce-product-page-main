@@ -3,24 +3,14 @@ import BigPicture from "../BigPicture/BigPicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
 import ArrowButton from "../../ui/ArrowButton";
 import "./Lightbox.scss";
+import { useImageNavigation } from "../../../customHooks/useImageNavigation";
 
 const Lightbox: React.FC<LightboxProps> = ({
   imgBig,
-  image,
   imgSmall,
-  selectedIndex,
-  onThumbnailClick,
   onClose,
 }) => {
-  const handlePrevClick = () => {
-    const newIndex = (selectedIndex - 1 + imgBig.length) % imgBig.length;
-    onThumbnailClick(imgBig[newIndex], newIndex);
-  };
-
-  const handleNextClick = () => {
-    const newIndex = (selectedIndex + 1) % imgBig.length;
-    onThumbnailClick(imgBig[newIndex], newIndex);
-  };
+  const { currentIndex, handlePrevClick, handleNextClick, setIndex } = useImageNavigation();
 
   return (
     <div className="lightbox">
@@ -39,7 +29,7 @@ const Lightbox: React.FC<LightboxProps> = ({
           </svg>
         </div>
         <div className="BigPicturesLightBoxContainer">
-          <BigPicture image={image} />
+          <BigPicture image={imgBig[currentIndex]} />
           <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
           <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>
@@ -47,8 +37,8 @@ const Lightbox: React.FC<LightboxProps> = ({
           <SmallPictures
             imgSmall={imgSmall}
             imgBig={imgBig}
-            selectedIndex={selectedIndex}
-            onThumbnailClick={onThumbnailClick}
+            selectedIndex={currentIndex}
+            onThumbnailClick={(_imgBig, index) => setIndex(index)}
           />
         </div>
       </div>

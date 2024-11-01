@@ -1,10 +1,12 @@
 import React, { createContext, useState, ReactNode } from "react";
 import { ImageNavigationContextProps } from "../../typescript/types";
+import { sneakersDatas } from "../datas/sneakersDatas";
 
 export const ImageNavigationContext = createContext<ImageNavigationContextProps | undefined>(undefined);
 
-export const ImageNavigationProvider: React.FC<{ children: ReactNode; max: number; onThumbnailClick: (img: string, index: number) => void; imgBig: string[] }> = ({ children, max, onThumbnailClick, imgBig }) => {
+export const ImageNavigationProvider: React.FC<{ children: ReactNode; max: number }> = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const max = sneakersDatas[0].imgBig.length;
 
   const incrementIndex = () => {
     setCurrentIndex((currentIndex + 1) % max);
@@ -20,12 +22,10 @@ export const ImageNavigationProvider: React.FC<{ children: ReactNode; max: numbe
 
   const handlePrevClick = () => {
     decrementIndex();
-    onThumbnailClick(imgBig[currentIndex], currentIndex);
   };
 
   const handleNextClick = () => {
     incrementIndex();
-    onThumbnailClick(imgBig[currentIndex], currentIndex);
   };
 
   return (
