@@ -29,3 +29,13 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .arrowButton {
+        width: 2.5rem;
+        height: 2.5rem;  
+        
+        & .arrowSvg {
+            padding: 0.8rem;
+        }
+    }
+}
