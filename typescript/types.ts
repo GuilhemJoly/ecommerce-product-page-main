@@ -1,9 +1,6 @@
 export interface LightboxProps {
   imgSmall: string[];
-  image: string;
   imgBig: string[];
-  selectedIndex: number;
-  onThumbnailClick: (imgBig: string, index: number) => void;
   onClose: () => void;
 }
 
@@ -44,4 +41,13 @@ export interface CartContextProps {
   emptyCart: boolean;
   setEmptyCart: (empty: boolean) => void;
   handleDeleteCart: () => void;
+}
+
+export interface ImageNavigationContextProps {
+  currentIndex: number;
+  incrementImgIndex: () => void;
+  decrementImgIndex: () => void;
+  setImgIndex: (index: number) => void;
+  handlePrevClick: () => void;
+  handleNextClick: () => void;
 }
