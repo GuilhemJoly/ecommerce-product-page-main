@@ -28,11 +28,9 @@ export const ProductPictures = () => {
 
   return (
     <div className="productPictures">
-      <BigPicture
-        image={selectedImage}
+      <BigPicture   
         onClick={handleImageClick}
         imgBig={staticImg}
-        isLightboxOpen={isLightboxOpen}
       />
       <SmallPictures
         imgSmall={imgSmall}

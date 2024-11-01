@@ -3,13 +3,13 @@ import { useImageNavigation } from '../../../customHooks/useImageNavigation';
 import ArrowButton from '../../ui/ArrowButton';
 import './BigPicture.scss';
 
-const BigPicture: React.FC<BigPictureProps> = ({ image, onClick, imgBig, isLightboxOpen }) => {
+const BigPicture: React.FC<BigPictureProps> = ({ onClick, imgBig}) => {
     const {handlePrevClick, handleNextClick, currentIndex} = useImageNavigation();
     return (
         <div className="bigPicture">
         <img
             className="productBigPicture"
-            src={`${isLightboxOpen ? imgBig[currentIndex] : image}`}
+            src={imgBig[currentIndex]}
             alt="product big view"
             onClick={onClick}
         />

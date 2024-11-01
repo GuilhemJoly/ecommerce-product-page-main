@@ -5,10 +5,8 @@ export interface LightboxProps {
 }
 
 export interface BigPictureProps {
-  image: string;
   onClick?: () => void;
   imgBig: string[];
-  isLightboxOpen: boolean;
 }
 
 export interface SmallPicturesProps {
