@@ -7,8 +7,14 @@
 
 @media (max-width: 768px) {
     .productBigPicture {
+        
         object-fit: cover;
         border-radius: 0;
         user-select: none;
+    }
+}
+@media (max-width: 390px) {
+    .productBigPicture {
+        height: 18.7rem;
     }
 }
