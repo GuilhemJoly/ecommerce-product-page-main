@@ -7,13 +7,13 @@ const NavDesktop = () => {
   const [isNavOpen, setIsNavOpen] = useState("hidden");
 
   const toggleNav = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth <= 768) {
       setIsNavOpen(isNavOpen === "hidden" ? "" : "hidden");
     }
   };
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth > 768) {
         setIsNavOpen("");
       } else {
         setIsNavOpen("hidden");

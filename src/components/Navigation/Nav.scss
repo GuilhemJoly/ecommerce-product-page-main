@@ -35,7 +35,7 @@ nav {
     }
   }
 }
-@media (width < 768px) {
+@media (max-width: 768px) {
   nav {
     z-index: 5;
     top: 0;
