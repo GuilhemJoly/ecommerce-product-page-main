@@ -5,15 +5,17 @@ nav {
   display: flex;
   width: 38rem;
   box-sizing: border-box;
+  margin-top: 0.4rem;
 
   & ul {
     @include flex-center;
-    gap: 2rem;
+    gap: 2.05rem;
 
     & li {
       list-style: none;
       cursor: pointer;
       height: 2rem;
+      font-size: 0.95rem;
     }
   }
 }
@@ -21,6 +23,7 @@ nav {
   width: 8.7rem;
   height: 3rem;
   object-fit: contain;
+  margin-top: 0.1rem;
   margin-right: 1rem;
 }
 .closeIcon {
@@ -40,6 +43,7 @@ nav {
     z-index: 5;
     top: 0;
     left: 0;
+    margin-top: 0;
     & ul {
       position: fixed;
       flex-direction: column;
