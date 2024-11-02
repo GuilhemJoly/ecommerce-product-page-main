@@ -5,6 +5,7 @@ const SmallPictures: React.FC<SmallPicturesProps> = ({
   imgSmall,
   imgBig,
   selectedIndex,
+  sizeClass,
   onThumbnailClick,
 }) => {
   return (
@@ -16,10 +17,10 @@ const SmallPictures: React.FC<SmallPicturesProps> = ({
           onClick={() => onThumbnailClick(imgBig[index], index)}
         >
           <span
-            className={`borderImg ${selectedIndex === index ? "selected" : ""}`}
+            className={`borderImg ${selectedIndex === index ? "selected" : ""} ${sizeClass}`}
           ></span>
           <img
-            className={selectedIndex === index ? "selected" : ""}
+            className={`${selectedIndex === index ? "selected" : ""} ${sizeClass}`}
             src={smallImg}
             alt={`product view ${index + 1}`}
           />

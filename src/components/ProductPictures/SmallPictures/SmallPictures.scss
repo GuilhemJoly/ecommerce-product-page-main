@@ -11,8 +11,6 @@
 
     & img {
         position: relative;
-        width: 5.5rem;
-        height: 5.5rem;
         object-fit: cover;
         border-radius: 15px;
         border: 2px solid transparent; 
@@ -26,8 +24,6 @@
     
     & .borderImg {
         position: absolute;
-        width: 5.5rem;
-        height: 5.5rem;
         object-fit: cover;
         border-radius: 15px;
         border: 2px solid $orange;
