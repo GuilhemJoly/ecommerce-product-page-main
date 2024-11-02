@@ -1,6 +1,3 @@
-@import '../../../Scss-variables/colors';
-@import '../../../Scss-variables/mixins';
-
 .lightbox {
     @include flex-center;
     position: fixed;

@@ -1,6 +1,3 @@
-@import "../../Scss-variables/mixins.scss";
-@import "../../Scss-variables/colors.scss";
-
 .productPictures {
     @include flex-center;
     flex-direction: column;

@@ -1,7 +1,3 @@
-@import "../Scss-variables/mixins.scss";
-@import "../Scss-variables/colors.scss";
-@import "../Scss-variables/typography.scss";
-
 .header {
   @include flex-center;
   position: relative;
