@@ -5,16 +5,19 @@ import "./ProductPictures.scss";
 import Lightbox from "./Lightbox/Lightbox";
 import BigPicture from "./BigPicture/BigPicture";
 import SmallPictures from "./SmallPictures/SmallPictures";
+import useWindowSize from "../../customHooks/useWindowSize";
 
 export const ProductPictures = () => {
-  
   const { imgBig, imgSmall } = sneakersDatas[0];
-  const [selectedImage, setSelectedImage] = useState(imgBig[0]);
+  // const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
+  //* staticImg is used to store the selected image in the page when the lightbox is open
+  const staticImg = Array(imgBig.length).fill(sneakersDatas[0].imgBig[selectedIndex]);
+
   const handleThumbnailClick = (imgBig: string, index: number) => {
-    setSelectedImage(imgBig);
+    // setSelectedImage(imgBig);
     setSelectedIndex(index);
   };
   const handleImageClick = () => {
@@ -23,10 +26,14 @@ export const ProductPictures = () => {
   const handleCloseLightbox = () => {
     setIsLightboxOpen(false);
   };
+  const { width } = useWindowSize();
 
   return (
     <div className="productPictures">
-      <BigPicture image={selectedImage} onClick={handleImageClick}/>
+      <BigPicture   
+        onClick={handleImageClick}
+        imgBig={width > 768 ? staticImg : imgBig}
+      />
       <SmallPictures
         imgSmall={imgSmall}
         imgBig={imgBig}
@@ -35,7 +42,7 @@ export const ProductPictures = () => {
       />
       {isLightboxOpen && (
         <Lightbox
-          imgSmall={imgSmall}         
+          imgSmall={imgSmall}
           imgBig={imgBig}
           onClose={handleCloseLightbox}
         />

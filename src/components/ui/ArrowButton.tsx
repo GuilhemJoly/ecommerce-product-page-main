@@ -1,9 +1,17 @@
 import { ArrowButtonProps } from "../../../typescript/types";
+import useWindowSize from "../../customHooks/useWindowSize";
 import "./ArrowButton.scss";
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton, imgChange }) => {
+const ArrowButton: React.FC<ArrowButtonProps> = ({
+  isLeftButton,
+  imgChange,
+}) => {
+  const { width } = useWindowSize();
   return (
-    <div onClick={imgChange} className={`arrowButton ${isLeftButton === true ? "leftButton" : ""}`}>
+    <div
+      onClick={imgChange}
+      className={`arrowButton ${isLeftButton === true ? "leftButton" : ""}`}
+    >
       <svg
         className="arrowSvg"
         width="13"
@@ -11,10 +19,10 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ isLeftButton, imgChange }) =>
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="m2 1 8 8-8 8"
-          stroke-width="3"
+          d={width >= 768 ? "M2 1 L10 9 L2 17" : "M2 3 L8 8.5 L2 14"}
+          strokeWidth="3"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         />
       </svg>
     </div>
