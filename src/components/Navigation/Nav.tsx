@@ -1,31 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./Nav.scss";
+import useWindowSize from "../../customHooks/useWindowSize";
 
 const NavDesktop = () => {
-  const [isNavOpen, setIsNavOpen] = useState("hidden");
+  const {width} = useWindowSize();
+  const [isNavOpen, setIsNavOpen] = useState("");
 
   const toggleNav = () => {
-    if (window.innerWidth <= 768) {
+    if (width <= 768) {
       setIsNavOpen(isNavOpen === "hidden" ? "" : "hidden");
     }
   };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsNavOpen("");
-      } else {
-        setIsNavOpen("hidden");
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+    if (width > 768) {
+      setIsNavOpen("");
+    } else {
+      setIsNavOpen("hidden");
+    }
+  }, [width]);
+  
+  
   return (
     <>
     <nav>
