@@ -41,7 +41,7 @@ export const ProductPictures = () => {
         sizeClass="pageImgSize"
         onThumbnailClick={handleThumbnailClick}
       />
-      {isLightboxOpen && (
+      {(isLightboxOpen && width > 768) && (
         <Lightbox
           imgSmall={imgSmall}
           imgBig={imgBig}
