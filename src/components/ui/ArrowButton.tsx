@@ -20,7 +20,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
       >
         <path
           d={width >= 768 ? "M2 1 L10 9 L2 17" : "M2 3 L8 8.5 L2 14"}
-          stroke-width="3"
+          strokeWidth="3"
           fill="none"
           fillRule="evenodd"
         />
