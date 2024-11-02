@@ -30,6 +30,7 @@ export interface ButtonProps {
 
 export interface CartDropdownProps {
   isOpen: boolean;
+  toggleOpenCart: () => void;
 }
 
 export interface LocalStorageProps {
