@@ -19,7 +19,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d={width >= 768 ? "M2 1 L10 9 L2 17" : "M2 3 L8 8 L2 14"}
+          d={width >= 768 ? "M2 1 L10 9 L2 17" : "M2 3 L8 8.5 L2 14"}
           stroke-width="3"
           fill="none"
           fillRule="evenodd"

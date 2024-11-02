@@ -5,6 +5,7 @@ import "./ProductPictures.scss";
 import Lightbox from "./Lightbox/Lightbox";
 import BigPicture from "./BigPicture/BigPicture";
 import SmallPictures from "./SmallPictures/SmallPictures";
+import useWindowSize from "../../customHooks/useWindowSize";
 
 export const ProductPictures = () => {
   const { imgBig, imgSmall } = sneakersDatas[0];
@@ -25,12 +26,13 @@ export const ProductPictures = () => {
   const handleCloseLightbox = () => {
     setIsLightboxOpen(false);
   };
+  const { width } = useWindowSize();
 
   return (
     <div className="productPictures">
       <BigPicture   
         onClick={handleImageClick}
-        imgBig={staticImg}
+        imgBig={width > 768 ? staticImg : imgBig}
       />
       <SmallPictures
         imgSmall={imgSmall}
