@@ -39,6 +39,7 @@
     align-items: center;
     width: 10.7rem;
     margin-bottom: 0.6rem;
+    user-select: none;
 }
 .productPrice {
     font-size: 1.85rem;
@@ -65,6 +66,7 @@
     font-weight: $font-weight-bold;
     position: relative;
     margin: 0;
+    user-select: none;
 
     &::after {
         content: '';

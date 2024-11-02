@@ -27,6 +27,7 @@
     margin-top: 0.8rem;
     padding-left: 1rem;
     padding-bottom: 0.4rem;
+    user-select: none;
   }
 }
 .isEmptyDiv {
@@ -38,6 +39,7 @@
 .isEmptySpan {
   @include flex-center;
   color: $dark-grayish-blue;
+  user-select: none;
 }
 .cartItems {
   @include flex-center;
