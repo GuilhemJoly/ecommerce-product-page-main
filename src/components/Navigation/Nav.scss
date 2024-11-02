@@ -9,12 +9,13 @@ nav {
 
   & ul {
     @include flex-center;
-    gap: 2rem;
+    gap: 2.05rem;
 
     & li {
       list-style: none;
       cursor: pointer;
       height: 2rem;
+      font-size: 0.95rem;
     }
   }
 }
