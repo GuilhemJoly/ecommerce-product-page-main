@@ -13,6 +13,7 @@ export interface SmallPicturesProps {
   imgSmall: string[];
   imgBig: string[];
   selectedIndex: number;
+  sizeClass: string;
   onThumbnailClick: (imgBig: string, index: number) => void;
 }
 

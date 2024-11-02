@@ -38,6 +38,7 @@ export const ProductPictures = () => {
         imgSmall={imgSmall}
         imgBig={imgBig}
         selectedIndex={selectedIndex}
+        sizeClass="pageImgSize"
         onThumbnailClick={handleThumbnailClick}
       />
       {isLightboxOpen && (
