@@ -8,7 +8,7 @@ import SmallPictures from "./SmallPictures/SmallPictures";
 
 export const ProductPictures = () => {
   const { imgBig, imgSmall } = sneakersDatas[0];
-  const [selectedImage, setSelectedImage] = useState(imgBig[0]);
+  // const [selectedImage, setSelectedImage] = useState(imgBig[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
@@ -16,7 +16,7 @@ export const ProductPictures = () => {
   const staticImg = Array(imgBig.length).fill(sneakersDatas[0].imgBig[selectedIndex]);
 
   const handleThumbnailClick = (imgBig: string, index: number) => {
-    setSelectedImage(imgBig);
+    // setSelectedImage(imgBig);
     setSelectedIndex(index);
   };
   const handleImageClick = () => {
