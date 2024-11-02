@@ -3,38 +3,48 @@ import Button from "../ui/Button";
 import "./CartDropDown.scss";
 import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
+import { useEffect } from "react";
 
-const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, toggleOpenCart}) => {
+const CartDropdown: React.FC<CartDropdownProps> = ({
+  isOpen,
+  toggleOpenCart,
+}) => {
+  const { emptyCart, cartItem, handleDeleteCart } = useCart();
 
-    const { emptyCart, cartItem, handleDeleteCart} = useCart();
+  const name = cartItem?.[0]?.name || "";
+  const price = cartItem?.[0]?.price || 0;
+  const quantity = cartItem?.[0]?.quantity || 0;
+  const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
 
-    const name = cartItem?.[0]?.name || "";
-    const price = cartItem?.[0]?.price || 0;
-    const quantity = cartItem?.[0]?.quantity || 0;
-    const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
+  const finalPrice = price * quantity;
 
-    const finalPrice = price * quantity;
+  const ref = useOutsideClick(() => {
+    if (isOpen) {
+      toggleOpenCart();
+    }
+  });
 
-    const ref = useOutsideClick(() => {
-      if (isOpen) {
-        toggleOpenCart();
-      }
-    });
+  useEffect(() => {
+    if (emptyCart) {
+      setTimeout(() => {
+        if (isOpen) {
+          toggleOpenCart();
+        }
+      }, 2000);
+    }
+  }, [emptyCart, isOpen, toggleOpenCart]);
 
   return (
     <div ref={ref} className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
-      {(!cartItem || emptyCart) ? (
+      {!cartItem || emptyCart ? (
         <div className="isEmptyDiv">
-            <span className="isEmptySpan">Your cart is empty</span>
+          <span className="isEmptySpan">Your cart is empty</span>
         </div>
       ) : (
         <div className="cartItems">
           <div className="cartItem">
-            <img
-              className="cartImg"
-              src={imgProduct}
-            />
+            <img className="cartImg" src={imgProduct} />
             <div className="cartItemDescription">
               <span>{name}</span>
               <div className="cartPriceSection">
@@ -45,7 +55,11 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, toggleOpenCart}) =>
               </div>
             </div>
             <div className="deleteIconContainer">
-              <img className="deleteIcon" src="public\images\icon-delete.svg" onClick={handleDeleteCart }/>
+              <img
+                className="deleteIcon"
+                src="public\images\icon-delete.svg"
+                onClick={handleDeleteCart}
+              />
             </div>
           </div>
           <Button buttonName="Checkout" buttonClass="cartButton" />
