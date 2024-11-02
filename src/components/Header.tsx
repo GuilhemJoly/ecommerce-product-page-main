@@ -33,7 +33,7 @@ const Header = () => {
         </div>
         <img src={avatar} alt="Avatar" className="avatar" />
       </div>
-      <CartDropdown isOpen={isOpen} />
+      <CartDropdown isOpen={isOpen} toggleOpenCart={toggleOpenCart} />
     </div>
   );
 };

@@ -2,8 +2,9 @@ import { CartDropdownProps } from "../../../typescript/types";
 import Button from "../ui/Button";
 import "./CartDropDown.scss";
 import { useCart } from "../../customHooks/useCart";
+import useOutsideClick from "../../customHooks/useClickOutsideElement";
 
-const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
+const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen, toggleOpenCart}) => {
 
     const { emptyCart, cartItem, handleDeleteCart} = useCart();
 
@@ -14,8 +15,14 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isOpen}) => {
 
     const finalPrice = price * quantity;
 
+    const ref = useOutsideClick(() => {
+      if (isOpen) {
+        toggleOpenCart();
+      }
+    });
+
   return (
-    <div className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
+    <div ref={ref} className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
       {(!cartItem || emptyCart) ? (
         <div className="isEmptyDiv">
