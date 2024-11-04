@@ -1,0 +1,10 @@
+.cartItems {
+  @include flex-center;
+  flex-direction: column;
+  border-top: 1px solid $grayish-blue;
+  width: 100%;
+  min-height: 12rem;
+  margin: 0;
+  gap: 1.6rem;
+  color: $dark-grayish-blue;
+}
