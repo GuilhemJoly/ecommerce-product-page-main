@@ -1,14 +1,11 @@
 import { CartItemProps } from "../../../typescript/types";
 import { useCart } from "../../customHooks/useCart";
 
-export const CartItem: React.FC<CartItemProps>  = () => {
-    const { cartItem, handleDeleteCart } = useCart();
+export const CartItem: React.FC<CartItemProps>  = ({ item }) => {
+    const { handleDeleteCart } = useCart();
 
-    const name = cartItem?.[0]?.name || "";
-    const price = cartItem?.[0]?.price || 0;
-    const quantity = cartItem?.[0]?.quantity || 0;
-    const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
-  
+    const { name, price, quantity, imgSmall } = item;
+    const imgProduct = imgSmall[0] || "";  
     const finalPrice = price * quantity;
 
   return (
