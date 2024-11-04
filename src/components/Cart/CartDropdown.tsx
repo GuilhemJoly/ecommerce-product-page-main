@@ -1,69 +1,41 @@
 import { CartDropdownProps } from "../../../typescript/types";
-import Button from "../Ui/Button";
-import "./CartDropDown.scss";
+import { useCallback, useEffect } from "react";
 import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
-import { useEffect } from "react";
+import { CartItems } from "./CartItems";
+import { CartMessage } from "./CartMessage";
+import "./CartDropDown.scss";
 
-const CartDropdown: React.FC<CartDropdownProps> = ({
-  isOpen,
-  toggleOpenCart,
-}) => {
-  const { emptyCart, cartItem, handleDeleteCart } = useCart();
+const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => {
+  const { emptyCart, cartItem } = useCart();
 
-  const name = cartItem?.[0]?.name || "";
-  const price = cartItem?.[0]?.price || 0;
-  const quantity = cartItem?.[0]?.quantity || 0;
-  const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
-
-  const finalPrice = price * quantity;
-
-  const ref = useOutsideClick(() => {
+  const closeCart = useCallback(() => {
     if (isOpen) {
       toggleOpenCart();
     }
-  });
+  }, [isOpen, toggleOpenCart]);
+
+  const ref = useOutsideClick(closeCart);
 
   useEffect(() => {
     if (emptyCart) {
       setTimeout(() => {
-        if (isOpen) {
-          toggleOpenCart();
-        }
+        closeCart();
       }, 2000);
     }
-  }, [emptyCart, isOpen, toggleOpenCart]);
+  }, [emptyCart, closeCart]);
 
   return (
     <div ref={ref} className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
       {!cartItem || emptyCart ? (
-        <div className="isEmptyDiv">
-          <span className="isEmptySpan">Your cart is empty</span>
-        </div>
+        <CartMessage
+          cartMessageClass="isEmptyDiv"
+          messageClass="isEmptySpan"
+          message="Your cart is empty"
+        />
       ) : (
-        <div className="cartItems">
-          <div className="cartItem">
-            <img className="cartImg" src={imgProduct} />
-            <div className="cartItemDescription">
-              <span>{name}</span>
-              <div className="cartPriceSection">
-                <span>${price.toFixed(2)}</span>
-                <span>x </span>
-                <span>{quantity}</span>
-                <span className="bold">${finalPrice.toFixed(2)}</span>
-              </div>
-            </div>
-            <div className="deleteIconContainer">
-              <img
-                className="deleteIcon"
-                src="public\images\icon-delete.svg"
-                onClick={handleDeleteCart}
-              />
-            </div>
-          </div>
-          <Button buttonName="Checkout" buttonClass="cartButton" />
-        </div>
+        <CartItems />
       )}
     </div>
   );
