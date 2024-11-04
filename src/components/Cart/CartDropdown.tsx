@@ -1,7 +1,7 @@
+import { CartDropdownProps } from "../../../typescript/types";
 import { useCallback, useEffect } from "react";
 import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
-import { CartDropdownProps } from "../../../typescript/types";
 import { CartItems } from "./CartItems";
 import { CartMessage } from "./CartMessage";
 import "./CartDropDown.scss";
