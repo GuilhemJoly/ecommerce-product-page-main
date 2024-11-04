@@ -5,6 +5,7 @@ import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
 import { useCallback, useEffect } from "react";
 import { CartItem } from "./CartItem";
+import { CartMessage } from "./CartMessage";
 
 const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => {
   const { emptyCart, cartItem } = useCart();
@@ -13,9 +14,9 @@ const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => 
     if (isOpen) {
       toggleOpenCart();
     }
-  }, [isOpen, toggleOpenCart])
+  }, [isOpen, toggleOpenCart]);
 
-const ref = useOutsideClick(closeCart);
+  const ref = useOutsideClick(closeCart);
 
   useEffect(() => {
     if (emptyCart) {
@@ -29,9 +30,11 @@ const ref = useOutsideClick(closeCart);
     <div ref={ref} className={`cartDropDown ${!isOpen ? "hidden" : ""}`}>
       <h4>Cart</h4>
       {!cartItem || emptyCart ? (
-        <div className="isEmptyDiv">
-          <span className="isEmptySpan">Your cart is empty</span>
-        </div>
+        <CartMessage
+          cartMessageClass="isEmptyDiv"
+          messageClass="isEmptySpan"
+          message="Your cart is empty"
+        />
       ) : (
         <div className="cartItems">
           <CartItem />

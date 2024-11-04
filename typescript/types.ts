@@ -33,6 +33,12 @@ export interface CartDropdownProps {
   toggleOpenCart: () => void;
 }
 
+export interface CartMessageProps {
+  cartMessageClass: string;
+  messageClass: string;
+  message: string;
+}
+
 export interface LocalStorageProps {
   elements: string
 }
