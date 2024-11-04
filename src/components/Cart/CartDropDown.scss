@@ -26,18 +26,6 @@
     user-select: none;
   }
 }
-.isEmptyDiv {
-  @include flex-center;
-  border-top: 1px solid $grayish-blue;
-  width: 100%;
-  min-height: 11rem;
-}
-.isEmptySpan {
-  @include flex-center;
-  color: $dark-grayish-blue;
-  user-select: none;
-}
-
 .cartButton {
   width: 19.4rem;
   height: 3.4rem;
