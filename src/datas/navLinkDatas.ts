@@ -1,19 +1,40 @@
+import Product from '../components/Pages/Product';
+
 export const navLinkDatas = [
     {
+        id: 1,
+        title: "Home",
+        link: "product", // Change it to "home".
+        element: Product, // Product is a placeholder, change it to the Home component.
+    },
+    {
+        id: 2,
         title: "Collections",
-        link: "#",
+        link: "/collections",
+        element: Product, // Product is a placeholder, change it to the Collections component.
     },
     { 
+        id: 3,
         title: "Men",
-        link: "#",
+        link: "/men",
+        element: Product, // Product is a placeholder, change it to the Men component.
     },
-    {   title: "Women",
-        link: "#",
+    {   
+        id: 4,
+        title: "Women",
+        link: "/women",
+        element: Product, // Product is a placeholder, change it to the Women component.
     },
-    {   title: "About",
-        link: "#",
+    {  
+        id: 5,
+        title: "About",
+        link: "/about",
+        element: Product, // Product is a placeholder, change it to the About component.
     },
-    {   title: "Contact",
-        link: "#",
+    {  
+        id: 6,
+        title: "Contact",
+        link: "/contact",
+        element: Product, // Product is a placeholder, change it to the Contact component.
     },
 ];

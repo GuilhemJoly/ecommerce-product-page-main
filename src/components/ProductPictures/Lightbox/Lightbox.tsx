@@ -1,16 +1,13 @@
 import { LightboxProps } from "../../../../typescript/types";
 import BigPicture from "../BigPicture/BigPicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
-import ArrowButton from "../../ui/ArrowButton";
+import ArrowButton from "../../Ui/ArrowButton";
 import "./Lightbox.scss";
 import { useImageNavigation } from "../../../customHooks/useImageNavigation";
 
-const Lightbox: React.FC<LightboxProps> = ({
-  imgBig,
-  imgSmall,
-  onClose,
-}) => {
-  const { currentIndex, handlePrevClick, handleNextClick, setImgIndex } = useImageNavigation();
+const Lightbox: React.FC<LightboxProps> = ({ imgBig, imgSmall, onClose }) => {
+  const { currentIndex, handlePrevClick, handleNextClick, setImgIndex } =
+    useImageNavigation();
 
   return (
     <div className="lightbox">
@@ -29,7 +26,7 @@ const Lightbox: React.FC<LightboxProps> = ({
           </svg>
         </div>
         <div className="BigPicturesLightBoxContainer">
-          <BigPicture imgBig={imgBig}/>
+          <BigPicture imgBig={imgBig} />
           <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
           <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>
