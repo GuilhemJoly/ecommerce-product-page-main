@@ -32,6 +32,15 @@ export interface CartDropdownProps {
   isOpen: boolean;
   toggleOpenCart: () => void;
 }
+export interface CartItemProps {
+  item: {
+    brand: string;
+    name: string;
+    quantity: number;
+    price: number;
+    imgSmall: string[];
+  };
+}
 
 export interface CartMessageProps {
   cartMessageClass: string;
@@ -40,12 +49,26 @@ export interface CartMessageProps {
 }
 
 export interface LocalStorageProps {
-  elements: string
+  elements: string;
 }
 
 export interface CartContextProps {
-  cartItem: { brand: string; name: string; quantity: number; price: number, imgSmall: string[] }[];
-  setCartItem: (cartItem: { brand: string; name: string; quantity: number; price: number, imgSmall: string[] }[]) => void;
+  cartItem: {
+    brand: string;
+    name: string;
+    quantity: number;
+    price: number;
+    imgSmall: string[];
+  }[];
+  setCartItem: (
+    cartItem: {
+      brand: string;
+      name: string;
+      quantity: number;
+      price: number;
+      imgSmall: string[];
+    }[]
+  ) => void;
   emptyCart: boolean;
   setEmptyCart: (empty: boolean) => void;
   handleDeleteCart: () => void;

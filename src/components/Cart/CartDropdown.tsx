@@ -1,11 +1,10 @@
-import { CartDropdownProps } from "../../../typescript/types";
-import Button from "../Ui/Button";
-import "./CartDropDown.scss";
+import { useCallback, useEffect } from "react";
 import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
-import { useCallback, useEffect } from "react";
-import { CartItem } from "./CartItem";
+import { CartDropdownProps } from "../../../typescript/types";
+import { CartItems } from "./CartItems";
 import { CartMessage } from "./CartMessage";
+import "./CartDropDown.scss";
 
 const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => {
   const { emptyCart, cartItem } = useCart();
@@ -36,10 +35,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => 
           message="Your cart is empty"
         />
       ) : (
-        <div className="cartItems">
-          <CartItem />
-          <Button buttonName="Checkout" buttonClass="cartButton" />
-        </div>
+        <CartItems />
       )}
     </div>
   );

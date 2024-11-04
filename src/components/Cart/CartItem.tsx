@@ -1,6 +1,7 @@
+import { CartItemProps } from "../../../typescript/types";
 import { useCart } from "../../customHooks/useCart";
 
-export const CartItem = () => {
+export const CartItem: React.FC<CartItemProps>  = () => {
     const { cartItem, handleDeleteCart } = useCart();
 
     const name = cartItem?.[0]?.name || "";
@@ -9,7 +10,7 @@ export const CartItem = () => {
     const imgProduct = cartItem?.[0]?.imgSmall[0] || "";
   
     const finalPrice = price * quantity;
-    
+
   return (
     <div className="cartItem">
       <img className="cartImg" src={imgProduct} />
