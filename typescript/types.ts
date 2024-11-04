@@ -53,3 +53,8 @@ export interface ImageNavigationContextProps {
   handlePrevClick: () => void;
   handleNextClick: () => void;
 }
+
+export interface Route {
+  path: string;
+  title: string;
+}

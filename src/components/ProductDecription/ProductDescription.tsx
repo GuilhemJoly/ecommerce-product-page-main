@@ -2,7 +2,7 @@ import { useQuantity } from "../../customHooks/useQuantity";
 import { useLocalStorage } from "../../customHooks/useLocalStorage";
 import { sneakersDatas } from "../../datas/sneakersDatas";
 import { useCart } from "../../customHooks/useCart";
-import Button from "../ui/Button";
+import Button from "../Ui/Button";
 
 import "./ProductDescription.scss";
 
@@ -10,25 +10,25 @@ export const ProductDescription = () => {
   const { brand, name, description, price, discount, previousPrice, imgSmall } =
     sneakersDatas[0];
 
-  const { quantity, incrementQuantity, decrementQuantity, resetQuantity } = useQuantity();
+  const { quantity, incrementQuantity, decrementQuantity, resetQuantity } =
+    useQuantity();
   const { setCartItem, setEmptyCart } = useCart();
   const { handleSubmitToStorage } = useLocalStorage();
-  
-  const a = {brand};
-  const b = {name};
-  const c = {price};
-  const d = {quantity};
-  const e = {imgSmall}
+
+  const a = { brand };
+  const b = { name };
+  const c = { price };
+  const d = { quantity };
+  const e = { imgSmall };
 
   const handleSubmit = () => {
     if (quantity === 0) return;
-    const elements =  JSON.stringify({ a, b, c, d, e });
+    const elements = JSON.stringify({ a, b, c, d, e });
     handleSubmitToStorage({ elements });
     resetQuantity();
     setCartItem([{ brand, name, price, quantity, imgSmall }]);
     setEmptyCart(false);
   };
-
 
   return (
     <div className="productDescription">

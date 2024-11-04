@@ -1,19 +1,40 @@
+import Product from '../components/Pages/Product';
+
 export const navLinkDatas = [
     {
+        id: 1,
+        title: "Home",
+        link: "product",
+        element: Product,
+    },
+    {
+        id: 2,
         title: "Collections",
-        link: "#",
+        link: "/collections",
+        element: Product,
     },
     { 
+        id: 3,
         title: "Men",
-        link: "#",
+        link: "/men",
+        element: Product,
     },
-    {   title: "Women",
-        link: "#",
+    {   
+        id: 4,
+        title: "Women",
+        link: "/women",
+        element: Product,
     },
-    {   title: "About",
-        link: "#",
+    {  
+        id: 5,
+        title: "About",
+        link: "/about",
+        element: Product,
     },
-    {   title: "Contact",
-        link: "#",
+    {  
+        id: 6,
+        title: "Contact",
+        link: "/contact",
+        element: Product,
     },
 ];

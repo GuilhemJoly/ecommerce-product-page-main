@@ -1,5 +1,5 @@
 import { CartDropdownProps } from "../../../typescript/types";
-import Button from "../ui/Button";
+import Button from "../Ui/Button";
 import "./CartDropDown.scss";
 import { useCart } from "../../customHooks/useCart";
 import useOutsideClick from "../../customHooks/useClickOutsideElement";
