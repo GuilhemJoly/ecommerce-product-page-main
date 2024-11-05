@@ -1,6 +1,6 @@
 import { CartItemProps } from "../../../typescript/types";
 import { useCart } from "../../customHooks/useCart";
-import "./CartItem.scss";
+import "./styles/CartItem.scss";
 
 export const CartItem: React.FC<CartItemProps>  = ({ item }) => {
     const { handleDeleteCart } = useCart();
