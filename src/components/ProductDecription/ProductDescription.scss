@@ -118,6 +118,7 @@
         font-size: 1rem;
         font-weight: $font-weight-bold;
         color: $very-dark-blue;
+        margin-left: 0.6rem;
     }
 }
 .productAddToCart {
@@ -219,6 +220,11 @@
             }
         }
 
+    }
+    .productQuantity {
+        & .quantityNumber {
+            margin-left: 0.2rem;
+        }
     }
     .productAddToCart {
         width: 100%;
