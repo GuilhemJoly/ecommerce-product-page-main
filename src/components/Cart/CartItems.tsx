@@ -1,5 +1,5 @@
 import { useCart } from "../../customHooks/useCart";
-import Button from "../Ui/Button";
+import Button from "../Ui/Button.tsx";
 import { CartItem } from "./CartItem";
 import "./styles/CartItems.scss";
 
