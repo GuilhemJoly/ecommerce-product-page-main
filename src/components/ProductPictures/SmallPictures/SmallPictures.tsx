@@ -1,4 +1,4 @@
-import { SmallPicturesProps } from "../../../../typescript/types";
+import { SmallPicturesProps } from "@typescript/types";
 import "./SmallPictures.scss";
 
 const SmallPictures: React.FC<SmallPicturesProps> = ({
@@ -16,10 +16,14 @@ const SmallPictures: React.FC<SmallPicturesProps> = ({
           onClick={() => onThumbnailClick(index)}
         >
           <span
-            className={`borderImg ${selectedIndex === index ? "selected" : ""} ${sizeClass}`}
+            className={`borderImg ${
+              selectedIndex === index ? "selected" : ""
+            } ${sizeClass}`}
           ></span>
           <img
-            className={`${selectedIndex === index ? "selected" : ""} ${sizeClass}`}
+            className={`${
+              selectedIndex === index ? "selected" : ""
+            } ${sizeClass}`}
             src={smallImg}
             alt={`product view ${index + 1}`}
           />

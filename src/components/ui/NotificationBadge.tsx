@@ -1,4 +1,4 @@
-import { useCart } from "../../customHooks/useCart";
+import { useCart } from "@customHooks/useCart";
 import "./NotificationBadge.scss";
 
 const NotificationBadge = () => {

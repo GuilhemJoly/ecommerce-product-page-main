@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useWindowSize from "../../customHooks/useWindowSize";
-import { navLinkDatas } from "../../datas/navLinkDatas";
+import useWindowSize from "@customHooks/useWindowSize";
+import { navLinkDatas } from "@datas/navLinkDatas";
 import "./Nav.scss";
 
 const NavDesktop = () => {

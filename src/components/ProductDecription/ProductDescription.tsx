@@ -1,8 +1,8 @@
-import { useQuantity } from "../../customHooks/useQuantity";
-import { useLocalStorage } from "../../customHooks/useLocalStorage";
-import { sneakersDatas } from "../../datas/sneakersDatas";
-import { useCart } from "../../customHooks/useCart";
-import Button from "../Ui/Button.tsx";
+import { useQuantity } from "@customHooks/useQuantity";
+import { useLocalStorage } from "@customHooks/useLocalStorage";
+import { useCart } from "@customHooks/useCart";
+import { sneakersDatas } from "@datas/sneakersDatas";
+import Button from "@Ui/Button.tsx";
 
 import "./ProductDescription.scss";
 

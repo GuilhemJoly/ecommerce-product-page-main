@@ -1,4 +1,4 @@
-import { LocalStorageProps } from "../../typescript/types";
+import { LocalStorageProps } from "@typescript/types";
 
 export const useLocalStorage = () => {
   const handleSubmitToStorage = ({ elements }: LocalStorageProps) => {

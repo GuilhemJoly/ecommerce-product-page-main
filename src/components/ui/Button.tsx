@@ -1,4 +1,4 @@
-import { ButtonProps } from "../../../typescript/types";
+import { ButtonProps } from "@typescript/types";
 import "./Button.scss";
 
 const Button: React.FC<ButtonProps> = ({
