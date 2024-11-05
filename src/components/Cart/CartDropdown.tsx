@@ -4,7 +4,7 @@ import { useCart } from "@customHooks/useCart";
 import useOutsideClick from "@customHooks/useClickOutsideElement";
 import { CartItems } from "./CartItems";
 import { CartMessage } from "./CartMessage";
-import "./styles/CartDropDown.scss";
+import "./styles/CartDropdown.scss";
 
 const CartDropdown: React.FC<CartDropdownProps> = ({isOpen, toggleOpenCart}) => {
   const { emptyCart, cartItem } = useCart();
