@@ -11,10 +11,9 @@ export interface LargePictureProps {
 
 export interface SmallPicturesProps {
   imgSmall: string[];
-  imgBig: string[];
   selectedIndex: number;
   sizeClass: string;
-  onThumbnailClick: (imgBig: string, index: number) => void;
+  onThumbnailClick: (index: number) => void;
 }
 
 export interface ArrowButtonProps {
@@ -78,7 +77,7 @@ export interface ImageNavigationContextProps {
   currentIndex: number;
   incrementImgIndex: () => void;
   decrementImgIndex: () => void;
-  setImgIndex: (index: number) => void;
+  setImgIndex: ( index: number) => void;
   handlePrevClick: () => void;
   handleNextClick: () => void;
 }
