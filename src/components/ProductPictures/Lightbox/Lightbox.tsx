@@ -1,9 +1,9 @@
 import { LightboxProps } from "../../../../typescript/types";
+import { useImageNavigation } from "../../../customHooks/useImageNavigation";
 import LargePicture from "../LargePicture/LargePicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
 import ArrowButton from "../../Ui/ArrowButton";
 import "./Lightbox.scss";
-import { useImageNavigation } from "../../../customHooks/useImageNavigation";
 
 const Lightbox: React.FC<LightboxProps> = ({ imgBig, imgSmall, onClose }) => {
   const { currentIndex, handlePrevClick, handleNextClick, setImgIndex } =

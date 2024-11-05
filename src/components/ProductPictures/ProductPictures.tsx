@@ -1,11 +1,10 @@
 import { useState } from "react";
+import useWindowSize from "../../customHooks/useWindowSize";
 import { sneakersDatas } from "../../datas/sneakersDatas";
-
-import "./ProductPictures.scss";
 import Lightbox from "./Lightbox/Lightbox";
 import LargePicture from "./LargePicture/LargePicture";
 import SmallPictures from "./SmallPictures/SmallPictures";
-import useWindowSize from "../../customHooks/useWindowSize";
+import "./ProductPictures.scss";
 
 export const ProductPictures = () => {
   const { imgBig, imgSmall } = sneakersDatas[0];

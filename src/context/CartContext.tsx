@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { useLocalStorage } from "../customHooks/useLocalStorage";
 import { CartContextProps } from "../../typescript/types";
+import { useLocalStorage } from "../customHooks/useLocalStorage";
 
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
