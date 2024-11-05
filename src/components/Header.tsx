@@ -5,7 +5,7 @@ import NotificationBadge from "@ui/NotificationBadge";
 import "./Header.scss";
 
 const Header = () => {
-  const avatar = "public/images/image-avatar.png";
+  const avatar = "images/image-avatar.png";
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpenCart = () => {

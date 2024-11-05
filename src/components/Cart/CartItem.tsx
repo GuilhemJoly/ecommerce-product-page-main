@@ -24,7 +24,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item }) => {
       <div className="deleteIconContainer">
         <img
           className="deleteIcon"
-          src="src/assets/icons/icon-delete.svg"
+          src="images/icons/icon-delete.svg"
           onClick={handleDeleteCart}
         />
       </div>
