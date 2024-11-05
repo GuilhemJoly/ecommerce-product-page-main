@@ -2,7 +2,7 @@ import { useQuantity } from "@customHooks/useQuantity";
 import { useLocalStorage } from "@customHooks/useLocalStorage";
 import { useCart } from "@customHooks/useCart";
 import { sneakersDatas } from "@datas/sneakersDatas";
-import Button from "@Ui/Button.tsx";
+import Button from "@ui/Button";
 
 import "./ProductDescription.scss";
 

@@ -1,6 +1,6 @@
 import { useCart } from "@customHooks/useCart";
 import { CartItem } from "./CartItem";
-import Button from "@Ui/Button.tsx";
+import Button from "@ui/Button";
 import "./styles/CartItems.scss";
 
 export const CartItems = () => {

@@ -29,7 +29,7 @@
       "@customHooks/*": ["src/customHooks/*"],
       "@datas/*": ["src/datas/*"],
       "@typescript/*": ["src/typescript/*"],
-      "@Ui/*": ["src/components/Ui/*"]
+      "@ui/*": ["src/components/ui/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]

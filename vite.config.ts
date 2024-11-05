@@ -21,7 +21,7 @@ export default defineConfig({
       '@customHooks': path.resolve(__dirname, 'src/customHooks'),
       '@datas': path.resolve(__dirname, 'src/datas'),
       '@typescript': path.resolve(__dirname, 'src/typescript'),
-      '@Ui': path.resolve(__dirname, 'src/components/UI'),
+      '@ui': path.resolve(__dirname, 'src/components/ui'),
     }
   }
 });
