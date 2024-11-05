@@ -44,7 +44,7 @@ Mobile
 ### Links
 
 - Solution URL: [Github](https://github.com/GuilhemJoly/ecommerce-product-page-main)
-- Live Site URL: [Live on Vercel](https://ecommerce-product-page-main-one-navy.vercel.app/)
+- Live Site URL: [Live on Vercel](https://challenge-ecommerce-product-page.vercel.app/)
 
 ## My process
 
