@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-import "./Nav.scss";
 import useWindowSize from "../../customHooks/useWindowSize";
 import { navLinkDatas } from "../../datas/navLinkDatas";
+import "./Nav.scss";
 
 const NavDesktop = () => {
   const { width } = useWindowSize();
@@ -26,7 +25,7 @@ const NavDesktop = () => {
   return (
     <>
       <nav>
-        <img src="public/images/logo.svg" alt="logo" className="logo" />
+        <img src="src/assets/logo/logo.svg" alt="logo" className="logo" />
         <div className="closeIcon" onClick={toggleNav}>
           {isNavOpen === "hidden" ? (
             <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
