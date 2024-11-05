@@ -16,7 +16,7 @@ export const ProductPictures = () => {
     sneakersDatas[0].imgBig[selectedIndex]
   );
 
-  const handleThumbnailClick = (imgBig: string, index: number) => {
+  const handleThumbnailClick = ( index: number) => {
     setSelectedIndex(index);
   };
   const handleImageClick = () => {
@@ -35,7 +35,6 @@ export const ProductPictures = () => {
       />
       <SmallPictures
         imgSmall={imgSmall}
-        imgBig={imgBig}
         selectedIndex={selectedIndex}
         sizeClass="pageImgSize"
         onThumbnailClick={handleThumbnailClick}

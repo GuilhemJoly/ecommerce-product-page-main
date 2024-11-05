@@ -3,7 +3,6 @@ import "./SmallPictures.scss";
 
 const SmallPictures: React.FC<SmallPicturesProps> = ({
   imgSmall,
-  imgBig,
   selectedIndex,
   sizeClass,
   onThumbnailClick,
@@ -14,7 +13,7 @@ const SmallPictures: React.FC<SmallPicturesProps> = ({
         <div
           key={index}
           className="thumbnail-container"
-          onClick={() => onThumbnailClick(imgBig[index], index)}
+          onClick={() => onThumbnailClick(index)}
         >
           <span
             className={`borderImg ${selectedIndex === index ? "selected" : ""} ${sizeClass}`}

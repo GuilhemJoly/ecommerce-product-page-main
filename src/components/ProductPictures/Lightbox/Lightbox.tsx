@@ -33,10 +33,9 @@ const Lightbox: React.FC<LightboxProps> = ({ imgBig, imgSmall, onClose }) => {
         <div className="SmallPicturesLightBoxContainer">
           <SmallPictures
             imgSmall={imgSmall}
-            imgBig={imgBig}
             selectedIndex={currentIndex}
             sizeClass="lightboxSmallImgSize"
-            onThumbnailClick={(_imgBig, index) => setImgIndex(index)}
+            onThumbnailClick={(index: number) => setImgIndex(index)}
           />
         </div>
       </div>
