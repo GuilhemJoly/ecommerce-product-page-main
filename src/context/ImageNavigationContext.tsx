@@ -1,12 +1,16 @@
 import React, { createContext, useState, ReactNode } from "react";
-import { ImageNavigationContextProps } from "../../typescript/types";
-import { sneakersDatas } from "../datas/sneakersDatas";
+import { ImageNavigationContextProps } from "@typescript/types";
+import { sneakersDatas } from "@datas/sneakersDatas";
 
-export const ImageNavigationContext = createContext<ImageNavigationContextProps | undefined>(undefined);
+export const ImageNavigationContext = createContext<
+  ImageNavigationContextProps | undefined
+>(undefined);
 
-export const ImageNavigationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ImageNavigationProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const max = sneakersDatas[0].imgBig.length; 
+  const max = sneakersDatas[0].imgBig.length;
 
   const incrementImgIndex = () => {
     setCurrentIndex((currentIndex + 1) % max);
@@ -29,7 +33,16 @@ export const ImageNavigationProvider: React.FC<{ children: ReactNode }> = ({ chi
   };
 
   return (
-    <ImageNavigationContext.Provider value={{ currentIndex, incrementImgIndex, decrementImgIndex, setImgIndex, handlePrevClick, handleNextClick }}>
+    <ImageNavigationContext.Provider
+      value={{
+        currentIndex,
+        incrementImgIndex,
+        decrementImgIndex,
+        setImgIndex,
+        handlePrevClick,
+        handleNextClick,
+      }}
+    >
       {children}
     </ImageNavigationContext.Provider>
   );

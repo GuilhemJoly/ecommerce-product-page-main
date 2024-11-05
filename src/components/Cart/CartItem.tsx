@@ -1,13 +1,13 @@
-import { CartItemProps } from "../../../typescript/types";
-import { useCart } from "../../customHooks/useCart";
+import { CartItemProps } from "@typescript/types";
+import { useCart } from "@customHooks/useCart";
 import "./styles/CartItem.scss";
 
-export const CartItem: React.FC<CartItemProps>  = ({ item }) => {
-    const { handleDeleteCart } = useCart();
+export const CartItem: React.FC<CartItemProps> = ({ item }) => {
+  const { handleDeleteCart } = useCart();
 
-    const { name, price, quantity, imgSmall } = item;
-    const imgProduct = imgSmall[0] || "";  
-    const finalPrice = price * quantity;
+  const { name, price, quantity, imgSmall } = item;
+  const imgProduct = imgSmall[0] || "";
+  const finalPrice = price * quantity;
 
   return (
     <div className="cartItem">

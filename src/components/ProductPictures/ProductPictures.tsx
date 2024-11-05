@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useWindowSize from "../../customHooks/useWindowSize";
-import { sneakersDatas } from "../../datas/sneakersDatas";
+import useWindowSize from "@customHooks/useWindowSize";
+import { sneakersDatas } from "@datas/sneakersDatas";
 import Lightbox from "./Lightbox/Lightbox";
 import LargePicture from "./LargePicture/LargePicture";
 import SmallPictures from "./SmallPictures/SmallPictures";

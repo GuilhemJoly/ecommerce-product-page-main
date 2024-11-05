@@ -19,7 +19,18 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Paths */
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@context/*": ["src/context/*"],
+      "@customHooks/*": ["src/customHooks/*"],
+      "@datas/*": ["src/datas/*"],
+      "@typescript/*": ["src/typescript/*"],
+      "@Ui/*": ["src/components/Ui/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

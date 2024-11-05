@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,4 +14,14 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@customHooks': path.resolve(__dirname, 'src/customHooks'),
+      '@datas': path.resolve(__dirname, 'src/datas'),
+      '@typescript': path.resolve(__dirname, 'src/typescript'),
+      '@Ui': path.resolve(__dirname, 'src/components/UI'),
+    }
+  }
 });

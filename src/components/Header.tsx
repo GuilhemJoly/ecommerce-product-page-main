@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NavDesktop from "./Navigation/Nav";
 import CartDropdown from "./Cart/CartDropdown";
-import NotificationBadge from "./Ui/NotificationBadge.tsx";
+import NotificationBadge from "@Ui/NotificationBadge.tsx";
 import "./Header.scss";
 
 const Header = () => {

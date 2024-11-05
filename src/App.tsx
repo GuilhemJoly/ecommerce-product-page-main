@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { navLinkDatas } from "./datas/navLinkDatas";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { navLinkDatas } from "@datas/navLinkDatas";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
 import "./App.scss";
 
 function App() {

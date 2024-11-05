@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ImageNavigationContext } from "../context/ImageNavigationContext";
+import { ImageNavigationContext } from "@context/ImageNavigationContext";
 
 export const useImageNavigation = () => {
     const context = useContext(ImageNavigationContext);

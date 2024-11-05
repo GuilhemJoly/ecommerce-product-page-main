@@ -1,5 +1,5 @@
-import { ArrowButtonProps } from "../../../typescript/types";
-import useWindowSize from "../../customHooks/useWindowSize";
+import { ArrowButtonProps } from "@typescript/types";
+import useWindowSize from "@customHooks/useWindowSize";
 import "./ArrowButton.scss";
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({
