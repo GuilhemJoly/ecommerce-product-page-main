@@ -4,7 +4,7 @@ export const navLinkDatas = [
     {
         id: 1,
         title: "Home",
-        link: "product", // Change it to "home".
+        link: "/", 
         element: Product, // Product is a placeholder, change it to the Home component.
     },
     {
