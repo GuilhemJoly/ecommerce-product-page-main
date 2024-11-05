@@ -1,5 +1,5 @@
 import { LightboxProps } from "../../../../typescript/types";
-import BigPicture from "../BigPicture/BigPicture";
+import LargePicture from "../LargePicture/LargePicture";
 import SmallPictures from "../SmallPictures/SmallPictures";
 import ArrowButton from "../../Ui/ArrowButton";
 import "./Lightbox.scss";
@@ -26,7 +26,7 @@ const Lightbox: React.FC<LightboxProps> = ({ imgBig, imgSmall, onClose }) => {
           </svg>
         </div>
         <div className="BigPicturesLightBoxContainer">
-          <BigPicture imgBig={imgBig} />
+          <LargePicture imgBig={imgBig} />
           <ArrowButton isLeftButton={true} imgChange={handlePrevClick} />
           <ArrowButton isLeftButton={false} imgChange={handleNextClick} />
         </div>

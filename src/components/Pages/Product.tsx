@@ -1,6 +1,6 @@
 import { ProductPictures } from "../ProductPictures/ProductPictures";
 import { ProductDescription } from "../ProductDecription/ProductDescription";
-import './Product.scss';
+import './styles/Product.scss';
 
 const Product = () => {
 

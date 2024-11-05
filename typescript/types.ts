@@ -4,7 +4,7 @@ export interface LightboxProps {
   onClose: () => void;
 }
 
-export interface BigPictureProps {
+export interface LargePictureProps {
   onClick?: () => void;
   imgBig: string[];
 }
