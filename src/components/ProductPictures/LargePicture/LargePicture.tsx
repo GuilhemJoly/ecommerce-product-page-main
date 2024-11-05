@@ -1,9 +1,9 @@
-import { BigPictureProps } from "../../../../typescript/types";
+import { LargePictureProps } from "../../../../typescript/types";
 import { useImageNavigation } from "../../../customHooks/useImageNavigation";
 import ArrowButton from "../../Ui/ArrowButton";
 import "./LargePicture.scss";
 
-const LargePicture: React.FC<BigPictureProps> = ({ onClick, imgBig }) => {
+const LargePicture: React.FC<LargePictureProps> = ({ onClick, imgBig }) => {
   const { handlePrevClick, handleNextClick, currentIndex } =
     useImageNavigation();
   return (
